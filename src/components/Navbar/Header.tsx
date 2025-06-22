@@ -42,7 +42,7 @@ const Header = () => {
             About Us
           </Link>
           <Link
-            to="/userguidance"
+            to="/services"
             className="hover:text-[#821AEA] transition-colors duration-200"
           >
             Services
