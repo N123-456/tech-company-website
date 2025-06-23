@@ -11,42 +11,65 @@ const IndexPage = () => {
           gatsbyImageData(placeholder: BLURRED)
         }
       }
+      Rectangle5: file(relativePath: { eq: "Rectangle5.png" }) {
+        childImageSharp {
+          gatsbyImageData(placeholder: BLURRED)
+        }
+      }
+      Rectangle6: file(relativePath: { eq: "Rectangle6.png" }) {
+        childImageSharp {
+          gatsbyImageData(placeholder: BLURRED)
+        }
+      }
     }
   `);
 
   const sideImage = getImage(data.sideimage);
+   const Rectangle5 = getImage(data.Rectangle5);
+    const Rectangle6 = getImage(data.Rectangle6);
   return (
     <AppLayout>
-      <main>
-        <div className="pt-[80px] bg-white flex flex-col items-center justify-center px-10">
-          <div className="w-full max-w-7xl animate-fade-in">
-            <div className="flex flex-col sm:flex-row justify-between items-center animate-slide-up">
-              {/* Left Section */}
-              <div className="max-w-xl animate-slide-up animate-delay-200">
-                <h1 className="text-[42px] font-['Outfit'] font-medium leading-tight">
-                  Skyrocket your <br />
-                  Business <span className="text-[#821AEA]">Growth</span>
-                </h1>
+   
+  
+       <main>
+        {/* Hero Section with Background Blob */}
+        <div className="pt-[80px] bg-white relative overflow-hidden">
+          {/* Purple Rectangular Background Blob */}
+          {/* <div
+            className="absolute w-[600px] h-[400px] top-0 left-0 bg-gradient-to-br from-[#3BAFFF] via-[#821AEA] to-[#8671FB] rounded-lg opacity-50 animate-pulse"
+            style={{ filter: "blur(20px)" }} // Softens edges to match the blended look
+          ></div> */}
 
-                <p className="text-gray-600 text-sm mt-4">
-                  Col n' Rows - A White Label Software Agency that provides a
-                  one-stop shop for startups to all-size businesses.
-                </p>
+          <div className="container mx-auto px-10 flex flex-col items-center justify-center relative z-10">
+            <div className="w-full max-w-7xl animate-fade-in">
+              <div className="flex flex-col sm:flex-row justify-between items-center animate-slide-up">
+                {/* Left Section */}
+                <div className="max-w-xl animate-slide-up animate-delay-200">
+                  <h1 className="text-[42px] font-['Outfit'] font-medium leading-tight">
+                    Skyrocket your <br />
+                    Business <span className="text-[#821AEA]">Growth</span>
+                  </h1>
 
-                <button className="mt-6 px-6 py-3 bg-[#821AEA] text-white rounded-full font-medium hover:opacity-90 transition">
-                  Get Started
-                </button>
-              </div>
+                  <p className="text-gray-600 text-sm mt-4">
+                    Col n' Rows - A White Label Software Agency that provides a
+                    one-stop shop for startups to all-size businesses.
+                  </p>
 
-              {/* Right Section - Image */}
-              <div className="ml-12 animate-slide-up animate-delay-300 hover:transform hover:scale-105 hover:shadow-lg transition-transform duration-300">
-                {sideImage && (
-                  <GatsbyImage
-                    image={sideImage}
-                    alt="Side illustration"
-                    className="w-[420px] h-auto"
-                  />
-                )}
+                  <button className="mt-6 px-6 py-3 bg-[#821AEA] text-white rounded-full font-medium hover:opacity-90 transition">
+                    Get Started
+                  </button>
+                </div>
+
+                {/* Right Section - Image */}
+                <div className="ml-12 animate-slide-up animate-delay-300 hover:transform hover:scale-105 hover:shadow-lg transition-transform duration-300">
+                  {sideImage && (
+                    <GatsbyImage
+                      image={sideImage}
+                      alt="Side illustration"
+                      className="w-[420px] h-auto"
+                    />
+                  )}
+                </div>
               </div>
             </div>
           </div>

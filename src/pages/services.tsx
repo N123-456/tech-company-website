@@ -2,6 +2,7 @@ import * as React from "react";
 import { AppLayout } from "../components/AppLayout/AppLayout";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { graphql, useStaticQuery } from "gatsby";
+import TechStack from "./technologies";
 
 const Services = () => {
   const data = useStaticQuery(graphql`
@@ -258,6 +259,7 @@ const Services = () => {
           </div>
         </div>
       </div>
+      <TechStack/>
     </AppLayout>
   );
 };

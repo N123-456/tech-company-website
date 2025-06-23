@@ -9,7 +9,7 @@ const Header = () => {
         childImageSharp {
           gatsbyImageData(
           
-            height: 60
+            height: 45
       
             placeholder: BLURRED
             layout: FIXED
