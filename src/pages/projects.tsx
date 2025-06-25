@@ -71,7 +71,7 @@ const IndexPage = () => {
             CRM
           </button>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-6">
+        <div className="flex flex-col items center gap-6">
           {projects.map((project) => (
             <div
               key={project.id}
@@ -108,9 +108,11 @@ const IndexPage = () => {
           ))}
         </div>
       </div>
-      <div className=" max-w-7xl mx-auto">
+      <div className=" max-w-7xl mx-auto pt-10">
         <h1 className="text-3xl font-bold text-gray-900 mb-8">Testimonials</h1>
-        <div className="flex grid grid-cols-1 gap-6">
+        <div className="flex items-center space-x-8">
+        <div className="flex flex-col items-left gap-1">
+         
           {testimonials.map((testimonial) => (
             <div
               key={testimonial.id}
@@ -133,15 +135,21 @@ const IndexPage = () => {
                   </div>
                
                 </div>
-              
+               
               </div>
+              
             </div>
+            
           ))}
+           
         </div>
-          <p className="text-gray-600 text-sm">"Lorem ipsum dolor sit amet consectetur. Mi suscipit consectetur lectus netus justo risus. Faucibus nulla nullam rhoncus lectus id turpis pulvinar vitae. Laoreet morbi justo at convallis. Fermentum nullam amet pulvinar nihil condimentum convallis. In incididunt libero moris metus laoreet duis cursus porttitor. Suspendisse tempor pellentesque amet arcu facilisis metus. Vulputate dictumst turpis leo quis. Urna risus augue ipsum pellentesque sit donec nisi. Imperdiet erat elit arcu vitae incididunt. Porttior aliquam nulla bibendum nulla eu aliquam nisi viverra. Aliquam ultricies vulputate gestas etiam in aliquam enim. Eget nibh sit ut suspendisse ut et ut in. Quis pharetra incididunt maecenass nibh bibendum proin et. Molestie suspendisse ultricier et cursus amet oenen. Rhoncus quisque lectus nisi gravida oenen mattis in. Tellus sapien a vulputate leo in. Nunc rutrum id lectus lorem libero vulputate."
-    </p>
+        <div> <p className="text-gray-600 text-sm w-[680px]">"Lorem ipsum dolor sit amet consectetur. Mi suscipit consectetur lectus netus justo risus. Faucibus nulla nullam rhoncus lectus id turpis pulvinar vitae. Laoreet morbi justo at convallis. Fermentum nullam amet pulvinar nihil condimentum convallis. In incididunt libero moris metus laoreet duis cursus porttitor. Suspendisse tempor pellentesque amet arcu facilisis metus. Vulputate dictumst turpis leo quis. Urna risus augue ipsum pellentesque sit donec nisi. Imperdiet erat elit arcu vitae incididunt. Porttior aliquam nulla bibendum nulla eu aliquam nisi viverra. Aliquam ultricies vulputate gestas etiam in aliquam enim. Eget nibh sit ut suspendisse ut et ut in. Quis pharetra incididunt maecenass nibh bibendum proin et. Molestie suspendisse ultricier et cursus amet oenen. Rhoncus quisque lectus nisi gravida oenen mattis in. Tellus sapien a vulputate leo in. Nunc rutrum id lectus lorem libero vulputate."
+    </p></div>
+        </div>
       </div>
     </div>
+
+    
     
   );
 };

@@ -1,6 +1,12 @@
 import './src/styles/global.css'
 import React from "react";
 
+export const onClientEntry = () => {
+  const script = document.createElement("script");
+  script.src = "https://kit.fontawesome.com/your-kit-id.js";
+  script.crossOrigin = "anonymous";
+  document.body.appendChild(script);
+};
 export const onRenderBody = ({ setHeadComponents }) => {
   setHeadComponents([
     <link
