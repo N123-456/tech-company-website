@@ -62,7 +62,7 @@ const Services = () => {
     <AppLayout>
       <div className="pt-[80px] bg-white flex flex-col items-center justify-center px-10">
         <section className="w-full max-w-7xl py-10 animate-fade-in">
-          <h2 className="text-3xl font-['Outfit'] font-medium text-center mb-10  animate-slide-up">
+          <h2 className="text-2xl font-bold text-center mb-8  animate-slide-up">
             We offer our services to
           </h2>
           <div className="flex flex-col sm:flex-row justify-around items-center py-6 animate-fade-in">
@@ -258,6 +258,7 @@ const Services = () => {
             </p>
           </div>
         </div>
+        
       </div>
       <TechStack/>
     </AppLayout>

@@ -26,7 +26,7 @@ const Header = () => {
       <header className="h-[100px] bg-[#DBDBDB40] flex items-center justify-between px-6 shadow-md border-b">
         <div className="flex items-center">
           <GatsbyImage image={logoImage!} alt="Logo" className=' w-[10.63px]'/>
-          <h1 className="text-[#821AEA] text-[30px] font-['Reem Kufi Fun'] font-medium pt-[5px] pl-[5px]">Col n'Rows</h1>
+          <h1 className="text-[#821AEA] text-[25px] font-['Reem Kufi Fun'] font-medium pt-[5px] pl-[5px]">Col n'Rows</h1>
         </div>
         <nav className="flex space-x-10 font-semibold gap-[77px] font-['Outfit'] text-[20px] text-[#393939]">
           <Link
