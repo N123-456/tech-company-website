@@ -2,6 +2,7 @@ import React from "react";
 import "../styles/global.css";
 import { graphql, useStaticQuery } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { AppLayout } from "../components/AppLayout/AppLayout";
 
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
@@ -57,6 +58,7 @@ const IndexPage = () => {
   ];
 
   return (
+    <AppLayout>
     <div className="min-h-screen bg-gray-50 py-10 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <h1 className="text-3xl font-bold text-center mb-8 text-gray-900">Our Projects</h1>
@@ -149,7 +151,7 @@ const IndexPage = () => {
       </div>
     </div>
 
-    
+    </AppLayout>
     
   );
 };
