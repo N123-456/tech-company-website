@@ -1,7 +1,7 @@
 import { graphql, useStaticQuery } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import React from "react";
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 const Freequote = () => {
   const data = useStaticQuery(graphql`
     query {
@@ -105,17 +105,17 @@ const Freequote = () => {
             </button>
           </div>
           <div className="flex justify-center space-x-4 mb-4">
-            <a href="#" className="text-green-500 hover:text-green-700 transition duration-300">
-              <span className="">WhatsApp</span>
-              <i className="fab fa-whatsapp"></i>
+            <a href="#" className="text-green-500  h-[50px] hover:text-green-700 transition duration-300">
+              <span className="sr-only">WhatsApp</span>
+              <FontAwesomeIcon icon={['fab', 'whatsapp']} />
             </a>
-            <a href="#" className="text-pink-500 hover:text-pink-700 transition duration-300">
-              <span className="">Instagram</span>
-              <i className="fab fa-instagram"></i>
+            <a href="#" className="text-pink-500  h-[50px] hover:text-pink-700 transition duration-300">
+              <span className="sr-only">Instagram</span>
+           <FontAwesomeIcon icon={['fab', 'instagram']}  />
             </a>
             <a href="#" className="text-blue-500 hover:text-blue-700 transition duration-300">
-              <span className="">Facebook</span>
-              <i className="fab fa-facebook"></i>
+              <span className="sr-only">Facebook</span>
+             <FontAwesomeIcon icon={['fab', 'facebook-f']} />
             </a>
           </div>
           <div className='border-b border-bg-[#E5E5E5] '></div>

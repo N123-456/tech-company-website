@@ -64,10 +64,10 @@ const IndexPage = () => {
           <button className="bg-purple-600 text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-purple-700 transition duration-200">
             All
           </button>
-          <button className="text-gray-600 hover:text-purple-600 text-sm font-medium transition duration-200">
+          <button className="text-gray-600 hover:text-purple-600 text-sm font-medium hover:bg-purple-700 transition duration-200">
             Mobile Apps
           </button>
-          <button className="text-gray-600 hover:text-purple-600 text-sm font-medium transition duration-200">
+          <button className="text-gray-600 hover:text-purple-600 text-sm font-medium hover:bg-purple-700 transition duration-200">
             CRM
           </button>
         </div>
@@ -110,8 +110,8 @@ const IndexPage = () => {
       </div>
       <div className=" max-w-7xl mx-auto pt-10">
         <h1 className="text-3xl font-bold text-gray-900 mb-8">Testimonials</h1>
-        <div className="flex items-center space-x-8">
-        <div className="flex flex-col items-left gap-1">
+        <div className="flex flex-row items-start space-x-10">
+        <div className="flex flex-col ">
          
           {testimonials.map((testimonial) => (
             <div
@@ -143,7 +143,7 @@ const IndexPage = () => {
           ))}
            
         </div>
-        <div> <p className="text-gray-600 text-sm w-[680px]">"Lorem ipsum dolor sit amet consectetur. Mi suscipit consectetur lectus netus justo risus. Faucibus nulla nullam rhoncus lectus id turpis pulvinar vitae. Laoreet morbi justo at convallis. Fermentum nullam amet pulvinar nihil condimentum convallis. In incididunt libero moris metus laoreet duis cursus porttitor. Suspendisse tempor pellentesque amet arcu facilisis metus. Vulputate dictumst turpis leo quis. Urna risus augue ipsum pellentesque sit donec nisi. Imperdiet erat elit arcu vitae incididunt. Porttior aliquam nulla bibendum nulla eu aliquam nisi viverra. Aliquam ultricies vulputate gestas etiam in aliquam enim. Eget nibh sit ut suspendisse ut et ut in. Quis pharetra incididunt maecenass nibh bibendum proin et. Molestie suspendisse ultricier et cursus amet oenen. Rhoncus quisque lectus nisi gravida oenen mattis in. Tellus sapien a vulputate leo in. Nunc rutrum id lectus lorem libero vulputate."
+        <div className="w-[680px]"> <p className="text-gray-600 text-sm">"Lorem ipsum dolor sit amet consectetur. Mi suscipit consectetur lectus netus justo risus. Faucibus nulla nullam rhoncus lectus id turpis pulvinar vitae. Laoreet morbi justo at convallis. Fermentum nullam amet pulvinar nihil condimentum convallis. In incididunt libero moris metus laoreet duis cursus porttitor. Suspendisse tempor pellentesque amet arcu facilisis metus. Vulputate dictumst turpis leo quis. Urna risus augue ipsum pellentesque sit donec nisi. Imperdiet erat elit arcu vitae incididunt. Porttior aliquam nulla bibendum nulla eu aliquam nisi viverra. Aliquam ultricies vulputate gestas etiam in aliquam enim. Eget nibh sit ut suspendisse ut et ut in. Quis pharetra incididunt maecenass nibh bibendum proin et. Molestie suspendisse ultricier et cursus amet oenen. Rhoncus quisque lectus nisi gravida oenen mattis in. Tellus sapien a vulputate leo in. Nunc rutrum id lectus lorem libero vulputate."
     </p></div>
         </div>
       </div>

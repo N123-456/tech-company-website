@@ -1,5 +1,6 @@
 import './src/styles/global.css'
 import React from "react";
+import './src/utils/fontawesome';
 
 export const onClientEntry = () => {
   const script = document.createElement("script");
