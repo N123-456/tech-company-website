@@ -47,6 +47,96 @@ const Services = () => {
           gatsbyImageData(width: 50, height: 50)
         }
       }
+        angular: file(relativePath: { eq: "angular.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 80, placeholder: BLURRED)
+        }
+      }
+      flutter: file(relativePath: { eq: "flutter.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 80, placeholder: BLURRED)
+        }
+      }
+    react: file(relativePath: { eq: "react.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 80, placeholder: BLURRED)
+        }
+      }
+    firebase: file(relativePath: { eq: "firebase.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 80, placeholder: BLURRED)
+        }
+      }
+      dolphin: file(relativePath: { eq: "dolphin.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 80, placeholder: BLURRED)
+        }
+      }
+      salesforce: file(relativePath: { eq: "salesforce.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 80, placeholder: BLURRED)
+        }
+      }
+      next: file(relativePath: { eq: "next.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 80, placeholder: BLURRED)
+        }
+      }
+      Group: file(relativePath: { eq: "Group.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 80, placeholder: BLURRED)
+        }
+      }
+      laravel: file(relativePath: { eq: "laravel.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 80, placeholder: BLURRED)
+        }
+      }
+      js: file(relativePath: { eq: "js.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 80, placeholder: BLURRED)
+        }
+      }
+      ts: file(relativePath: { eq: "ts.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 80, placeholder: BLURRED)
+        }
+      }
+      microsoft: file(relativePath: { eq: "microsoft.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 80, placeholder: BLURRED)
+        }
+      }
+      c: file(relativePath: { eq: "c.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 80, placeholder: BLURRED)
+        }
+      }
+      dotnet: file(relativePath: { eq: "dotnet.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 80, placeholder: BLURRED)
+        }
+      }
+      mongodb: file(relativePath: { eq: "mongodb.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 80, placeholder: BLURRED)
+        }
+      }
+      microsoft2: file(relativePath: { eq: "microsoft2.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 80, placeholder: BLURRED)
+        }
+      }
+      gatsby: file(relativePath: { eq: "gatsby.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 80, placeholder: BLURRED)
+        }
+      }
+      wordpress: file(relativePath: { eq: "wordpress.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 80, placeholder: BLURRED)
+        }
+      }
     }
   `);
 
@@ -58,11 +148,33 @@ const Services = () => {
   const logisticsLogo = getImage(data.logisticsLogo);
   const manufacturingLogo = getImage(data.manufacturingLogo);
   const agricultureLogo = getImage(data.agricultureLogo);
+
+  const techLogos = [
+      { name: "angular", image: getImage(data.angular) },
+      { name: "flutter", image: getImage(data.flutter) },
+      { name: "react", image: getImage(data.react) },
+      { name: "firebase", image: getImage(data.firebase) },
+      { name: "dolphin", image: getImage(data.dolphin) },
+      { name: "salesforce", image: getImage(data.salesforce) },
+      { name: "next", image: getImage(data.next) },
+      { name: "Group", image: getImage(data.Group) },
+      { name: "laravel", image: getImage(data.laravel) },
+      { name: "js", image: getImage(data.js) },
+      { name: "ts", image: getImage(data.ts) },
+      { name: "microsoft", image: getImage(data.microsoft) },
+      { name: "c", image: getImage(data.c) },
+      { name: "dotnet", image: getImage(data.dotnet) },
+       { name: "mongodb", image: getImage(data.mongodb) },
+      { name: "microsoft2", image: getImage(data.microsoft2) },
+       
+      { name: "gatsby", image: getImage(data.gatsby) },
+      { name: "wordpress", image: getImage(data.wordpress) },
+    ].filter(tech => tech.image);
   return (
-    <AppLayout>
-      <div className="pt-[80px] bg-white flex flex-col items-center justify-center px-10">
+    <div>
+      <div className="pt-[40px] bg-white flex flex-col items-center justify-center px-10">
         <section className="w-full max-w-7xl py-10 animate-fade-in">
-          <h2 className="text-2xl font-bold text-center mb-8  animate-slide-up">
+          <h2 className="text-[32px] font-medium text-center font-Outfit text-[#000000] mb-8  animate-slide-up">
             We offer our services to
           </h2>
           <div className="flex flex-col sm:flex-row justify-around items-center py-6 animate-fade-in">
@@ -74,12 +186,12 @@ const Services = () => {
                   className="w-[127px] h-[90px] mx-auto mb-4 bg-white"
                 />
               )}
-              <h3 className="text-2xl font-[Outfit] font-bold text-[#000000] mb-2">
+              <h3 className="text-[20px] font-Outfit font-medium text-[#000000] mb-2">
                 Startups
               </h3>
               <a
                 href="#"
-                className="text-[#A259FF] font-[Quicksand] text-xl font-normal"
+                className="text-[#821AEA] font-Quicksand text-[15px] font-normal"
               >
                 View Services →
               </a>
@@ -92,12 +204,12 @@ const Services = () => {
                   className="w-[145px] h-[78px] mx-auto mb-4"
                 />
               )}
-              <h3 className="text-xl font-[Outfit] font-bold text-[#000000] mb-2">
+              <h3 className="text-[20px] font-Outfit font-medium text-[#000000] mb-2">
                 Small Medium Sized Companies
               </h3>
               <a
                 href="#"
-                className="text-[#A259FF] font-[Quicksand] text-xl font-normal"
+                className="text-[#821AEA] font-Quicksand text-[15px] font-normal"
               >
                 View Services →
               </a>
@@ -107,10 +219,10 @@ const Services = () => {
       </div>
 
       <div className="container mx-auto px-4 py-10">
-        <h2 className="text-2xl font-bold text-center mb-8">
+        <h2 className="text-[32px] font-medium text-center font-Outfit text-[#000000] mb-8  animate-slide-up">
           Industries we have expertise in
         </h2>
-        <p className="text-center mb-6 text-gray-600">
+        <p className="text-center mb-6 text-[#4A4A4A] font-Quicksand text-[15px] font-normal">
           CoinRows is an IT company providing software development services to
           Startups and Small to Medium size companies working in below
           industries:
@@ -129,10 +241,10 @@ const Services = () => {
                 />
               )}
             </div>
-            <h3 className="text-lg font-semibold text-black mb-2">
+            <h3 className="text-[20px] font-Outfit font-normal text-[#000000] mb-2">
               Healthcare
             </h3>
-            <p className="text-gray-600 text-sm">
+            <p className="text-[#4A4A4A] font-Quicksand text-[15px] font-normal">
               With the increasing demand for digital healthcare solutions, the
               healthcare industry needs software development services to develop
               custom solutions for electronic health records, patient management
@@ -155,10 +267,10 @@ const Services = () => {
                 />
               )}
             </div>
-            <h3 className="text-lg font-semibold text-black mb-2">
+            <h3 className="text-[20px] font-Outfit font-normal text-[#000000] mb-2">
               Education
             </h3>
-            <p className="text-gray-600 text-sm">
+            <p className="text-[#4A4A4A] font-Quicksand text-[15px] font-normal">
               Education industry is rapidly adopting technology in teaching and
               learning processes. Custom software development solutions can help
               develop educational platforms, e-learning systems, online learning
@@ -178,10 +290,10 @@ const Services = () => {
                 />
               )}
             </div>
-            <h3 className="text-lg font-semibold text-black mb-2">
+            <h3 className="text-[20px] font-Outfit font-normal text-[#000000] mb-2">
               Retail
             </h3>
-            <p className="text-gray-600 text-sm">
+            <p className="text-[#4A4A4A] font-Quicksand text-[15px] font-normal">
               The retail industry is rapidly shifting towards online shopping
               and e-commerce, requiring software solutions to manage inventory,
               track orders, process payments, and more. Custom software
@@ -202,10 +314,10 @@ const Services = () => {
                 />
               )}
             </div>
-            <h3 className="text-lg font-semibold text-black mb-2">
+            <h3 className="text-[20px] font-Outfit font-normal text-[#000000] mb-2">
               Logistics & Transportation
             </h3>
-            <p className="text-gray-600 text-sm">
+            <p className="text-[#4A4A4A] font-Quicksand text-[15px] font-normal">
               The logistics and transportation industry requires software
               development services to develop custom solutions for supply chain
               management, fleet management, tracking and delivery systems, and
@@ -226,10 +338,10 @@ const Services = () => {
                 />
               )}
             </div>
-            <h3 className="text-lg font-semibold text-black mb-2">
+            <h3 className="text-[20px] font-Outfit font-normal text-[#000000] mb-2">
               Manufacturing
             </h3>
-            <p className="text-gray-600 text-sm">
+            <p className="text-[#4A4A4A] font-Quicksand text-[15px] font-normal">
               The manufacturing industry requires software development services
               to develop custom solutions for inventory management, production
               planning, quality control, and more. Custom software solutions can
@@ -249,10 +361,10 @@ const Services = () => {
                 />
               )}
             </div>
-            <h3 className="text-lg font-semibold text-black mb-2">
+            <h3 className="text-[20px] font-Outfit font-normal text-[#000000] mb-2">
               Agriculture
             </h3>
-            <p className="text-gray-600 text-sm">
+            <p className="text-[#4A4A4A] font-Quicksand text-[15px] font-normal">
               Agriculture industry required innovative infrastructure to disrupt
               old farming techniques which can skyrocket their business.
             </p>
@@ -260,8 +372,30 @@ const Services = () => {
         </div>
         
       </div>
-      <TechStack/>
-    </AppLayout>
+
+       <div className=" mx-auto p-6 bg-gray-50">
+            <h2 className="text-[32px] font-medium text-center font-Outfit text-[#000000] mb-8 ">Technologies that we use</h2>
+            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2 space-x-1 justify-items-center">
+              {techLogos.map((tech, index) => (
+                <div
+                  key={index}
+                  className="flex items-center justify-center p-4  transform transition duration-300 hover:scale-110 hover:shadow-lg animate-fadeIn"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+             {tech.image ? (
+                    <GatsbyImage image={tech.image} alt={tech.name} className="h-17 w-17 object-contain" />
+                  ) : (
+                    <span className="text-gray-400">Image not found</span>
+                  )}
+            </div>
+              ))}
+          </div>
+          
+          </div>
+      
+          
+    </div>
+    
   );
 };
 

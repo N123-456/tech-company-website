@@ -4,7 +4,7 @@ import { graphql, useStaticQuery } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { AppLayout } from "../components/AppLayout/AppLayout";
 
-const IndexPage = () => {
+const Projects = () => {
   const data = useStaticQuery(graphql`
     query {
       projectpic: file(relativePath: { eq: "projectpic.png" }) {
@@ -58,18 +58,21 @@ const IndexPage = () => {
   ];
 
   return (
-    <AppLayout>
+    <div>
     <div className="min-h-screen bg-gray-50 py-10 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-3xl font-bold text-center mb-8 text-gray-900">Our Projects</h1>
+        <h1 className="text-[32px] font-medium text-center font-Outfit text-[#000000] mb-8">Our Projects</h1>
         <div className="flex justify-center mb-6 space-x-4">
-          <button className="bg-purple-600 text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-purple-700 transition duration-200">
+          <button className="font-Quicksand text-[#4A4A4A] px-4 py-2 rounded-full text-[15px] font-[450px] hover:text-[#FFFFFF] hover:bg-[#821AEA] transition duration-200">
             All
           </button>
-          <button className="text-gray-600 hover:text-purple-600 text-sm font-medium hover:bg-purple-700 transition duration-200">
+          <button className="font-Quicksand text-[#4A4A4A] px-4 py-2 rounded-full text-[15px] font-[450px] hover:text-[#FFFFFF] hover:bg-[#821AEA] transition duration-200">
             Mobile Apps
           </button>
-          <button className="text-gray-600 hover:text-purple-600 text-sm font-medium hover:bg-purple-700 transition duration-200">
+          <button className="font-Quicksand text-[#4A4A4A] px-4 py-2 rounded-full text-[15px] font-[450px] hover:text-[#FFFFFF] hover:bg-[#821AEA] transition duration-200">
+            UI/UX
+          </button>
+          <button className="font-Quicksand text-[#4A4A4A] px-4 py-2 rounded-full text-[15px] font-[450px] hover:text-[#FFFFFF] hover:bg-[#821AEA] transition duration-200">
             CRM
           </button>
         </div>
@@ -89,19 +92,19 @@ const IndexPage = () => {
               )}
               </div>
               <div className="p-4">
-                <h2 className="text-xl font-semibold mb-2 text-gray-900">{project.title}</h2>
-                <p className="text-gray-600 text-sm mb-4">{project.description}</p>
+                <h2 className="text-[32px] font-normal font-Outfit mb-2 text-[#393939]">{project.title}</h2>
+                <p className="font-Quicksand text-[#4A4A4A] rounded-full text-[15px] font-[450px] mb-4">{project.description}</p>
                 <div className="flex space-x-2 mb-4">
-                  <span className="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded-full">
+                  <span className="font-Quicksand text-[#4A4A4A] rounded-full text-[15px] font-[450px] px-2 py-1 rounded-full">
                     UI/UX
                   </span>
-                  <span className="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded-full">
+                  <span className="font-Quicksand text-[#4A4A4A] rounded-full text-[15px] font-[450px] px-2 py-1 rounded-full">
                     Back-end
                   </span>
                 </div>
                 <a
                   href="#"
-                  className="text-purple-600 hover:underline font-medium text-sm"
+                  className="text-[#821AEA] font-Quicksand font-semibold text-[15px] hover:underline "
                 >
                   Read more →
                 </a>
@@ -111,7 +114,7 @@ const IndexPage = () => {
         </div>
       </div>
       <div className=" max-w-7xl mx-auto pt-10">
-        <h1 className="text-3xl font-bold text-gray-900 mb-8">Testimonials</h1>
+        <h1 className="text-[32px] font-medium font-Outfit text-[#000000] mb-8">Testimonials</h1>
         <div className="flex flex-row items-start space-x-10">
         <div className="flex flex-col ">
          
@@ -132,8 +135,8 @@ const IndexPage = () => {
               <div className="flex-1">
                 <div className="flex items-center justify-between mb-2">
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900">{testimonial.name}</h3>
-                    <p className="text-sm text-gray-600">{testimonial.title}</p>
+                    <h3 className="text-[20px] font-medium font-Outfit text-[#000000]">{testimonial.name}</h3>
+                    <p className="text-[15px] font-medium font-Outfit text-[#4A4A4A]">{testimonial.title}</p>
                   </div>
                
                 </div>
@@ -145,15 +148,15 @@ const IndexPage = () => {
           ))}
            
         </div>
-        <div className="w-[680px]"> <p className="text-gray-600 text-sm">"Lorem ipsum dolor sit amet consectetur. Mi suscipit consectetur lectus netus justo risus. Faucibus nulla nullam rhoncus lectus id turpis pulvinar vitae. Laoreet morbi justo at convallis. Fermentum nullam amet pulvinar nihil condimentum convallis. In incididunt libero moris metus laoreet duis cursus porttitor. Suspendisse tempor pellentesque amet arcu facilisis metus. Vulputate dictumst turpis leo quis. Urna risus augue ipsum pellentesque sit donec nisi. Imperdiet erat elit arcu vitae incididunt. Porttior aliquam nulla bibendum nulla eu aliquam nisi viverra. Aliquam ultricies vulputate gestas etiam in aliquam enim. Eget nibh sit ut suspendisse ut et ut in. Quis pharetra incididunt maecenass nibh bibendum proin et. Molestie suspendisse ultricier et cursus amet oenen. Rhoncus quisque lectus nisi gravida oenen mattis in. Tellus sapien a vulputate leo in. Nunc rutrum id lectus lorem libero vulputate."
+        <div className="w-[680px]"> <p className="font-Quicksand text-[#4A4A4A] text-[15px] font-medium">"Lorem ipsum dolor sit amet consectetur. Mi suscipit consectetur lectus netus justo risus. Faucibus nulla nullam rhoncus lectus id turpis pulvinar vitae. Laoreet morbi justo at convallis. Fermentum nullam amet pulvinar nihil condimentum convallis. In incididunt libero moris metus laoreet duis cursus porttitor. Suspendisse tempor pellentesque amet arcu facilisis metus. Vulputate dictumst turpis leo quis. Urna risus augue ipsum pellentesque sit donec nisi. Imperdiet erat elit arcu vitae incididunt. Porttior aliquam nulla bibendum nulla eu aliquam nisi viverra. Aliquam ultricies vulputate gestas etiam in aliquam enim. Eget nibh sit ut suspendisse ut et ut in. Quis pharetra incididunt maecenass nibh bibendum proin et. Molestie suspendisse ultricier et cursus amet oenen. Rhoncus quisque lectus nisi gravida oenen mattis in. Tellus sapien a vulputate leo in. Nunc rutrum id lectus lorem libero vulputate."
     </p></div>
         </div>
       </div>
     </div>
 
-    </AppLayout>
+    </div>
     
   );
 };
 
-export default IndexPage;
+export default Projects;

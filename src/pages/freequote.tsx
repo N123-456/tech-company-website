@@ -22,7 +22,7 @@ const Freequote = () => {
    const logo2 = getImage(data.logo2);
   return (
     <div className="min-h-screen flex flex-col items-center justify-start bg-white">
-      <h2 className="text-[32px] font-semibold text-center text-[#000000] mb-4 pt-4">
+      <h2 className="text-[32px] font-medium font-Outfit text-[#000000] text-center mb-4 pt-4">
         Get a free quote
       </h2>
       <div className="flex flex-col md:flex-row items-center justify-center w-[1141px] h-[519px] bg-white p-4 pt-10 space-x-10">
@@ -69,7 +69,7 @@ const Freequote = () => {
             <div className="flex pl-[200px]">
               <button
                 type="submit"
-                className="w-[153px] text-[15px] bg-purple-600 text-white p-2 rounded-xl hover:bg-purple-700 transition duration-300"
+                className="w-[153px] h[42px] text-[15px] bg-[#821AEA] text-[#FFFFFF] font-Outfit font-normal p-2 rounded-xl hover:bg-purple-700 transition duration-300"
               >
                 Get a free quote
               </button>
@@ -91,21 +91,21 @@ const Freequote = () => {
                           />)}
             </div>
           </div>
-          <p className="text-[#4A4A4A] mb-4">
+          <p className="text-[#4A4A4A] text-[15px] font-Outfit font-normal mb-4">
             Every project we deliver comes with full system understanding for your internal team, not just working code
           </p>
           <div className="flex justify-center items-center mb-4">
             <input
               type="email"
               placeholder="Subscribe to our newsletter"
-              className="p-2 border rounded-lg w-[494px] focus:outline-none focus:ring-2 focus:ring-purple-500"
+              className="p-2 border rounded-lg w-[494px] h-[60px] focus:outline-none focus:ring-2 focus:ring-purple-500"
             />
             <button className="bg-[#821AEA] text-white p-2 rounded-lg w-[109px] h-[42px] hover:bg-purple-600 transition duration-300">
               Subscribe
             </button>
           </div>
           <div className="flex justify-center space-x-4 mb-4">
-            <a href="#" className="text-green-500  h-[50px] hover:text-green-700 transition duration-300">
+            <a href="#" className="text-white bg-[#25D366] rounded-full h-[50px] hover:text-green-700 transition duration-300">
               <span className="sr-only">WhatsApp</span>
               <FontAwesomeIcon icon={['fab', 'whatsapp']} />
             </a>
@@ -119,7 +119,7 @@ const Freequote = () => {
             </a>
           </div>
           <div className='border-b border-bg-[#E5E5E5] '></div>
-          <p className="text-[#4A4A4A] text-sm pt-5">
+          <p className="text-[#4A4A4A] text-[15px] font-Outfit font-normal pt-5">
             © 2023 Col'n Rows. All Rights Reserved.
           </p>
         </footer>

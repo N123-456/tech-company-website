@@ -123,7 +123,7 @@ const TechStack = () => {
 
   return (
     <div className=" mx-auto p-6 bg-gray-50">
-      <h2 className="text-2xl font-bold text-center mb-8 text-gray-800">Technologies that we use</h2>
+      <h2 className="text-[32px] font-medium text-center font-Outfit text-[#000000] mb-8 ">Technologies that we use</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2 space-x-1 justify-items-center">
         {techLogos.map((tech, index) => (
           <div
