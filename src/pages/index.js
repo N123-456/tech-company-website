@@ -4,6 +4,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { graphql, useStaticQuery } from "gatsby";
 import Services from "./services";
 import Projects from "./projects";
+import Freequote from "./freequote";
 
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
@@ -172,6 +173,7 @@ const IndexPage = () => {
         </div>
         <Services />
         <Projects />
+        <Freequote/>
       </main>
     </AppLayout>
   );
