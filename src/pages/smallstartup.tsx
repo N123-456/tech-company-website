@@ -122,7 +122,52 @@ const smallstartup = () => {
   return (
     <AppLayout>
       <div>
+        <div className="pt-[80px] bg-white relative overflow-hidden">
+          {/* Hero Section with Background Blob */}
+          <div className="absolute top-[-40px] left-[-150px] w-[400px] z-0 opacity-70">
+            <svg
+              viewBox="0 0 600 600"
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-full h-full"
+            >
+              <defs>
+                <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#821AEA" />
+                  <stop offset="50%" stopColor="#CF69FF" />
+                  <stop offset="100%" stopColor="#A32AFF" />
+                </linearGradient>
+              </defs>
+              <path
+                fill="url(#grad1)"
+                d="M421.6,334.1Q392.2,418.2,309.1,447.3Q226,476.5,175.6,405.3Q125.2,334.1,122.6,267.4Q120,200.7,169.5,147.3Q219.1,93.9,298.4,97.6Q377.7,101.2,418.2,175.6Q458.8,250,421.6,334.1Z"
+              />
+            </svg>
+          </div>
+
+          {/* bottom-left */}
+          <div className="absolute top-[-150px] right-[-150px] w-[400px] z-0 opacity-70">
+  <svg
+    viewBox="0 0 600 600"
+    xmlns="http://www.w3.org/2000/svg"
+    className="w-full h-full"
+  >
+    <defs>
+      <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stopColor="#821AEA" />
+        <stop offset="50%" stopColor="#CF69FF" />
+        <stop offset="100%" stopColor="#A32AFF" />
+      </linearGradient>
+    </defs>
+    <path
+      fill="url(#grad2)"
+      d="M421.6,334.1Q392.2,418.2,309.1,447.3Q226,476.5,175.6,405.3Q125.2,334.1,122.6,267.4Q120,200.7,169.5,147.3Q219.1,93.9,298.4,97.6Q377.7,101.2,418.2,175.6Q458.8,250,421.6,334.1Z"
+    />
+  </svg>
+</div>
+
+
         <div className="flex flex-col items-center justify-center pt-20">
+          
           <h1 className="text-[#821AEA] font-Outfit text-[40px] font-medium pl-[15px]">
             We have a range of services for
             <br /></h1>
@@ -169,13 +214,13 @@ const smallstartup = () => {
               </div>
 
               {/* Education */}
-              <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+              <div className="bg-white p-6  hover:shadow-lg transition-shadow duration-300">
                 <div className="flex mb-2">
                   {qa && (
                     <GatsbyImage
                       image={qa}
                       alt="Logo"
-                      className="hover:scale-110 transition-transform duration-300 rounded-full"
+                      className="hover:scale-110 transition-transform duration-300 rounded-full border-bg-purple-700 shadow-md"
                       imgStyle={{ transition: "transform 0.3s ease" }}
                     />
                   )}
@@ -586,7 +631,7 @@ const smallstartup = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div></div>
       </div>
     </AppLayout>
   );

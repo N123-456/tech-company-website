@@ -15,11 +15,44 @@ const Freequote = () => {
               gatsbyImageData(placeholder: BLURRED)
             }
           }
+             signin: file(relativePath: { eq: "signin.png" }) {
+        childImageSharp {
+          gatsbyImageData(placeholder: BLURRED)
+        }
+      }
+         logo2: file(relativePath: { eq: "logo2.png" }) {
+            childImageSharp {
+              gatsbyImageData(placeholder: BLURRED)
+            }
+          }
+             signin: file(relativePath: { eq: "signin.png" }) {
+        childImageSharp {
+          gatsbyImageData(placeholder: BLURRED)
+        }
+      }
+         whatsapp: file(relativePath: { eq: "whatsapp.png" }) {
+            childImageSharp {
+              gatsbyImageData(placeholder: BLURRED)
+            }
+          }
+             instagram: file(relativePath: { eq: "instagram.png" }) {
+        childImageSharp {
+          gatsbyImageData(placeholder: BLURRED)
+        }
+      }
+         facebook: file(relativePath: { eq: "facebook.png" }) {
+            childImageSharp {
+              gatsbyImageData(placeholder: BLURRED)
+            }
+          }
     }
   `);
 
   const signin = getImage(data.signin);
    const logo2 = getImage(data.logo2);
+   const whatsapp = getImage(data.whatsapp);
+   const instagram = getImage(data.instagram);
+   const facebook = getImage(data.facebook);
   return (
     <div className="min-h-screen flex flex-col items-center justify-start bg-white">
       <h2 className="text-[32px] font-medium font-Outfit text-[#000000] text-center mb-4 pt-4">
@@ -105,17 +138,32 @@ const Freequote = () => {
             </button>
           </div>
           <div className="flex justify-center space-x-4 mb-4">
-            <a href="#" className="text-white bg-[#25D366] rounded-full h-[50px] hover:text-green-700 transition duration-300">
+            <a href="#" className="text-white rounded-full h-[50px] hover:text-green-700 transition duration-300">
               <span className="sr-only">WhatsApp</span>
-              <FontAwesomeIcon icon={['fab', 'whatsapp']} />
+               {whatsapp && (
+                          <GatsbyImage
+                            image={whatsapp}
+                            alt="Companies illustration"
+                            className="h-[31px] w-[31px]"
+                          />)}
             </a>
             <a href="#" className="text-pink-500  h-[50px] hover:text-pink-700 transition duration-300">
               <span className="sr-only">Instagram</span>
-           <FontAwesomeIcon icon={['fab', 'instagram']}  />
+           {instagram && (
+                          <GatsbyImage
+                            image={instagram}
+                            alt="Companies illustration"
+                            className="h-[31px] w-[31px]"
+                          />)}
             </a>
             <a href="#" className="text-blue-500 hover:text-blue-700 transition duration-300">
               <span className="sr-only">Facebook</span>
-             <FontAwesomeIcon icon={['fab', 'facebook-f']} />
+             {facebook && (
+                          <GatsbyImage
+                            image={facebook}
+                            alt="Companies illustration"
+                            className="h-[31px] w-[31px]"
+                          />)}
             </a>
           </div>
           <div className='border-b border-bg-[#E5E5E5] '></div>
