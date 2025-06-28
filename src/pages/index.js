@@ -95,7 +95,7 @@ const IndexPage = () => {
                   </p>
 
                   <button className="mt-6 px-[22px] py-[10px] w-[328px] h-[42px] bg-[#821AEA] text-[#FFFFFF] text-[15px] font-normal font-Outfit rounded-full font-medium hover:opacity-90 transition">
-                    Get Your IP-Safe Software Delivery Now
+                    Get Your IP-Safe Software Delivery Now →
                   </button>
                 </div>
 

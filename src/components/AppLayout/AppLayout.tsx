@@ -3,6 +3,7 @@ import { ReactNode } from "react"
 import Header from "../Navbar/Header"
 
 import { Helmet } from "react-helmet";
+import Footer from "../../pages/footer";
 
 <Helmet>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -28,7 +29,7 @@ export function AppLayout({children}:AppLayoutProps) {
         <main >
           {children}
         </main>
-      
+    
     </div>
   )
 }

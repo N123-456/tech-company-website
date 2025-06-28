@@ -3,6 +3,7 @@
  */
 module.exports = {
   siteMetadata: {
+    title: `TechNest | Cyber Solutions for Startups`,
     siteUrl: `https://www.yourdomain.tld`,
   },
   plugins: [
