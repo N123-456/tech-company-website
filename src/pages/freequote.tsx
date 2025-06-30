@@ -126,7 +126,7 @@ const Freequote = () => {
         </div>
       </div>
       <div className="pt-10">
-        <footer className="bg-gray-100 rounded-lg p-4 text-center w-full max-w-[1301px] shadow-lg">
+        <footer className="bg-[#F31313] rounded-lg p-4 text-center w-full max-w-[1301px] shadow-lg">
           <div className="flex justify-center items-center mb-4">
             <div>
               {logo2 && (
@@ -140,7 +140,7 @@ const Freequote = () => {
             your internal team, not just working code
           </p>
 
-          <div className="flex flex-col md:flex-row justify-center items-center mb-4 space-y-4 md:space-y-0 md:space-x-4">
+          <div className="flex flex-col md:flex-row justify-center items-center mb-4 space-y-4  md:space-y-0 md:space-x-4">
             <input
               type="email"
               placeholder="Subscribe to our newsletter"

@@ -10,7 +10,7 @@ export const onClientEntry = () => {
 };
 export const onRenderBody = ({ setHeadComponents }) => {
   setHeadComponents([
-     <link rel="icon" href="/favicon.png" type="image/png" sizes="512x512" />,
+     <link rel="icon" href="/favicon.ico" type="image/x-ico" />,
     <link
       key="preconnect-googleapis"
       rel="preconnect"
