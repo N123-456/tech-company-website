@@ -46,28 +46,31 @@ const Freequote = () => {
     e.preventDefault();
 
     if (!form.current) return;
-  const formData = new FormData(form.current);
-  const name = formData.get("name") as string;
-  const title = formData.get("title") as string;
-  const message = formData.get("message") as string;
-  
+    const formData = new FormData(form.current);
+    const name = formData.get("name") as string;
+    const title = formData.get("title") as string;
+    const message = formData.get("message") as string;
+
     emailjs
       .sendForm(
-        "service_4vvi6ej",
-        "template_6z4rsdl",
+        "service_fpm1r1l",
+        "template_hzev9nv",
         form.current,
-        "GZh6SnWmhmrOFBcUZ"
+        "BkqwK6VYhap8ZVCuT"
       )
-      .then(
-        () => {
-          alert("Message sent successfully!");
-        const existing = JSON.parse(localStorage.getItem("testimonials") || "[]");
-      const newTestimonial = { name, title, feedback: message };
-      localStorage.setItem("testimonials", JSON.stringify([...existing, newTestimonial]));
-
-  
-    })
-    .catch(() => alert("Failed to send"));};
+      .then(() => {
+        alert("Message sent successfully!");
+        const existing = JSON.parse(
+          localStorage.getItem("testimonials") || "[]"
+        );
+        const newTestimonial = { name, title, feedback: message };
+        localStorage.setItem(
+          "testimonials",
+          JSON.stringify([...existing, newTestimonial])
+        );
+      })
+      .catch(() => alert("Failed to send"));
+  };
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-start bg-white px-4 sm:px-6 lg:px-8">
@@ -122,82 +125,81 @@ const Freequote = () => {
           </form>
         </div>
       </div>
-<div className="pt-10">
-
-      <footer className="bg-gray-100 rounded-lg p-4 text-center w-full max-w-[1301px] shadow-lg">
-        <div className="flex justify-center items-center mb-4">
-          <div>
-            {logo2 && (
-              <GatsbyImage image={logo2} alt="Logo" className="h-[70px]" />
-            )}
+      <div className="pt-10">
+        <footer className="bg-gray-100 rounded-lg p-4 text-center w-full max-w-[1301px] shadow-lg">
+          <div className="flex justify-center items-center mb-4">
+            <div>
+              {logo2 && (
+                <GatsbyImage image={logo2} alt="Logo" className="h-[70px]" />
+              )}
+            </div>
           </div>
-        </div>
 
-        <p className="text-[#4A4A4A] text-[15px] font-Outfit font-normal mb-4">
-          Every project we deliver comes with full system understanding for your
-          internal team, not just working code
-        </p>
+          <p className="text-[#4A4A4A] text-[15px] font-Outfit font-normal mb-4">
+            Every project we deliver comes with full system understanding for
+            your internal team, not just working code
+          </p>
 
-        <div className="flex flex-col md:flex-row justify-center items-center mb-4 space-y-4 md:space-y-0 md:space-x-4">
-          <input
-            type="email"
-            placeholder="Subscribe to our newsletter"
-            className="p-2 border rounded-lg w-full md:w-[494px] h-[60px] focus:outline-none focus:ring-2 focus:ring-purple-500"
-          />
-          <button className="bg-[#821AEA] text-white p-2 rounded-lg w-full md:w-[109px] h-[42px] hover:bg-purple-600 transition duration-300">
-            Subscribe
-          </button>
-        </div>
+          <div className="flex flex-col md:flex-row justify-center items-center mb-4 space-y-4 md:space-y-0 md:space-x-4">
+            <input
+              type="email"
+              placeholder="Subscribe to our newsletter"
+              className="p-2 border rounded-lg w-full md:w-[494px] h-[60px] focus:outline-none focus:ring-2 focus:ring-purple-500"
+            />
+            <button className="bg-[#821AEA] text-white p-2 rounded-lg w-full md:w-[109px] h-[42px] hover:bg-purple-600 transition duration-300">
+              Subscribe
+            </button>
+          </div>
 
-        <div className="flex justify-center space-x-4 mb-4">
-          <a
-            href="#"
-            className="text-white rounded-full h-[50px] hover:text-green-700 transition duration-300"
-          >
-            <span className="sr-only">WhatsApp</span>
-            {whatsapp && (
-              <GatsbyImage
-                image={whatsapp}
-                alt="WhatsApp"
-                className="h-[31px] w-[31px]"
-              />
-            )}
-          </a>
-          <a
-            href="#"
-            className="text-pink-500 h-[50px] hover:text-pink-700 transition duration-300"
-          >
-            <span className="sr-only">Instagram</span>
-            {instagram && (
-              <GatsbyImage
-                image={instagram}
-                alt="Instagram"
-                className="h-[31px] w-[31px]"
-              />
-            )}
-          </a>
-          <a
-            href="#"
-            className="text-blue-500 hover:text-blue-700 transition duration-300"
-          >
-            <span className="sr-only">Facebook</span>
-            {facebook && (
-              <GatsbyImage
-                image={facebook}
-                alt="Facebook"
-                className="h-[31px] w-[31px]"
-              />
-            )}
-          </a>
-        </div>
+          <div className="flex justify-center space-x-4 mb-4">
+            <a
+              href="#"
+              className="text-white rounded-full h-[50px] hover:text-green-700 transition duration-300"
+            >
+              <span className="sr-only">WhatsApp</span>
+              {whatsapp && (
+                <GatsbyImage
+                  image={whatsapp}
+                  alt="WhatsApp"
+                  className="h-[31px] w-[31px]"
+                />
+              )}
+            </a>
+            <a
+              href="#"
+              className="text-pink-500 h-[50px] hover:text-pink-700 transition duration-300"
+            >
+              <span className="sr-only">Instagram</span>
+              {instagram && (
+                <GatsbyImage
+                  image={instagram}
+                  alt="Instagram"
+                  className="h-[31px] w-[31px]"
+                />
+              )}
+            </a>
+            <a
+              href="#"
+              className="text-blue-500 hover:text-blue-700 transition duration-300"
+            >
+              <span className="sr-only">Facebook</span>
+              {facebook && (
+                <GatsbyImage
+                  image={facebook}
+                  alt="Facebook"
+                  className="h-[31px] w-[31px]"
+                />
+              )}
+            </a>
+          </div>
 
-        <div className="border-b border-bg-[#E5E5E5] "></div>
-        <p className="text-[#4A4A4A] text-[15px] font-Outfit font-normal pt-5">
-          © 2023 Col'n Rows. All Rights Reserved.
-        </p>
-      </footer>
+          <div className="border-b border-bg-[#E5E5E5] "></div>
+          <p className="text-[#4A4A4A] text-[15px] font-Outfit font-normal pt-5">
+            © 2023 Col'n Rows. All Rights Reserved.
+          </p>
+        </footer>
+      </div>
     </div>
-     </div>
   );
 };
 

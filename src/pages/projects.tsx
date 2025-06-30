@@ -106,7 +106,7 @@ const Projects= () => {
   };
   
   return (
-    <div className="min-h-screen bg-gray-50 py-10 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-white py-10 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <h1 className="text-[32px] font-medium text-center font-Outfit text-[#000000] mb-8">
           Our Projects
@@ -205,7 +205,7 @@ const Projects= () => {
                       </div>
                        <button
                 onClick={() => handleDelete(index)}
-                className="absolute top-2 right-2 text-sm text-red-500 hover:text-red-700"
+                className="absolute top-2 right-2 text-purple-600 text-sm hover:text-red-700"
                 title="Delete testimonial"
               >
                 ❌
@@ -218,7 +218,7 @@ const Projects= () => {
 
             {/* Testimonial Paragraph */}
             <div className="w-full lg:w-[680px]">
-              <p className="font-Quicksand text-[#4A4A4A] text-[15px] font-medium">
+              <p className="font-Quicksand text-[#4A4A4A] text-[15px] font-medium border border-white">
          {testimonials[selectedIndex]?.feedback}
               </p>
             </div>

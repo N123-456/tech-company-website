@@ -37,7 +37,7 @@ const Services = () => {
           gatsbyImageData(width: 50, height: 50)
         }
       }
-      manufacturingLogo: file(relativePath: { eq: "manufacturing-logo.png" }) {
+      manufacturingLogo: file(relativePath: { eq: "manufacturingLogo.png" }) {
         childImageSharp {
           gatsbyImageData(width: 50, height: 50)
         }
@@ -137,6 +137,7 @@ const Services = () => {
           gatsbyImageData(width: 80, placeholder: BLURRED)
         }
       }
+        
     }
   `);
 
@@ -148,6 +149,8 @@ const Services = () => {
   const logisticsLogo = getImage(data.logisticsLogo);
   const manufacturingLogo = getImage(data.manufacturingLogo);
   const agricultureLogo = getImage(data.agricultureLogo);
+
+
 
   const techLogos = [
       { name: "angular", image: getImage(data.angular) },
@@ -328,7 +331,7 @@ const Services = () => {
 
           {/* Manufacturing */}
           <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-            <div className="flex justify-center mb-2">
+            <div className="flex mb-2">
               {manufacturingLogo && (
                 <GatsbyImage
                   image={manufacturingLogo}
@@ -393,7 +396,7 @@ const Services = () => {
           
           </div>
       
-          
+    
     </div>
     
   );

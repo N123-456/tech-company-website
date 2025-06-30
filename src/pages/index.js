@@ -7,6 +7,7 @@ import Projects from "./projects";
 import Freequote from "./freequote";
 
 const IndexPage = () => {
+
   const data = useStaticQuery(graphql`
     query {
       sideimage: file(relativePath: { eq: "sideimage.png" }) {
@@ -181,4 +182,10 @@ const IndexPage = () => {
 
 export default IndexPage;
 
-export const Head = () => <title>Home Page</title>;
+export const Head = () => (
+  <>
+    <title className="text-4xl font-bold text-purple-700">Col'n Rows Tech Website</title>
+    <link rel="icon" href="/favicon.png" type="image/png" />
+    <meta name="description" content="Col'n Rows Tech Company" />
+  </>
+)
