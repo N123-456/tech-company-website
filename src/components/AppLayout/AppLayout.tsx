@@ -5,14 +5,7 @@ import Header from "../Navbar/Header"
 import { Helmet } from "react-helmet";
 import Footer from "../../pages/footer";
 
-<Helmet>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
-    rel="stylesheet"
-  />
-</Helmet>
+
 
 type AppLayoutProps = {
   children: ReactNode
@@ -21,6 +14,11 @@ export function AppLayout({children}:AppLayoutProps) {
 
 
   return (
+    <><Helmet>
+        <title className="text-purple-700">Col'n Rows Tech Company</title>
+        <link rel="icon" href="/logo2.png" sizes="512x512" type="image/png" />
+        <meta name="description" content="Tech Company" />
+      </Helmet>
     <div className="flex flex-col min-h-screen">
       <Header/>
       
@@ -31,5 +29,6 @@ export function AppLayout({children}:AppLayoutProps) {
         </main>
     
     </div>
+    </>
   )
 }

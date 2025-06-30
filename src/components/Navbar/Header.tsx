@@ -10,14 +10,21 @@ const Header = () => {
           gatsbyImageData(placeholder: BLURRED)
         }
       }
+        logo2: file(relativePath: { eq: "logo2.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 40, height: 40, placeholder: TRACED_SVG)
+        }
+      }
     }
   `);
 
   const tlogo = getImage(data.tlogo);
+  const logo2 = getImage(data.logo2);
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   return (
     <div>
+    
       {/* Header */}
       <header className="h-[100px] bg-[#FFFFFF] flex items-center justify-between md:px-6 px-4 shadow-md border-b">
         {/* Logo Section */}
