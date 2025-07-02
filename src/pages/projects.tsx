@@ -176,7 +176,7 @@ const Projects= () => {
                   <div className="flex-1">
                     <div className="flex items-center justify-between mb-2">
                       <div>
-                        <h3 className="text-[20px] font-medium font-Outfit text-[#000000]">
+                        <h3 className="text-[17px] font-medium font-Outfit text-[#000000]">
                           {t.name}
                         </h3>
                         <p className="text-[15px] font-medium font-Outfit text-[#4A4A4A]">
@@ -197,8 +197,8 @@ const Projects= () => {
             </div>
 
             {/* Testimonial Paragraph */}
-            <div className="w-full lg:w-[680px]">
-              <p className="font-Quicksand text-[#4A4A4A] text-[15px] font-medium border border-[#E5E5E5]">
+            <div className="w-full sm:w-[200px] lg:w-[680px]">
+              <p className="font-Quicksand text-[#4A4A4A] text-[13px] font-medium border border-[#E5E5E5]">
          {testimonials[selectedIndex]?.feedback}
               </p>
             </div>

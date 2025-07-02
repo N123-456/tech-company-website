@@ -116,7 +116,7 @@ const smallstartup = () => {
 
           <div className="pt-[80px] bg-white flex flex-col items-center justify-center px-10">
             <div className="container mx-auto px-4 py-10">
-              <h2 className="text-[40px] font-semibold font-Outfit text-center mb-8">
+              <h2 className="lg:text-[40px] md:text-[38px] sm:text-[38px] font-semibold font-Outfit text-center mb-8">
                 Services for Small Startups
               </h2>
 
@@ -284,7 +284,7 @@ const smallstartup = () => {
 
           <div className="pt-[80px] bg-white flex flex-col items-center justify-center px-10">
             <div className="container mx-auto px-4 py-10">
-              <h2 className="text-[40px] font-semibold font-Outfit text-center mb-8">
+              <h2 className="lg:text-[40px] md:text-[38px] sm:text-[38px] font-semibold font-Outfit text-center mb-8">
                 Services for SME’s
               </h2>
 

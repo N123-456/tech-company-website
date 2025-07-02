@@ -101,7 +101,7 @@ const IndexPage = () => {
                 </div>
 
                 {/* Right Section - Image */}
-                <div className="ml-12 animate-slide-up animate-delay-300 hover:transform hover:scale-105 hover:shadow-lg transition-transform duration-300">
+                <div className="lg:ml-12 sm:items-center animate-slide-up animate-delay-300 hover:transform hover:scale-105 hover:shadow-lg transition-transform duration-300">
                   {sideImage && (
                     <GatsbyImage
                       image={sideImage}
@@ -125,7 +125,7 @@ const IndexPage = () => {
                 <div className="flex flex items-center mb-4 space-x-2">
                   <span className="inline-flex items-center rounded-full bg-[#3FBAFF] w-[21px] h-[21px] font-bold"></span>
 
-                  <h3 className="text-[20px] font-normal text-[#000000] font-Outfit">
+                  <h3 className="text-[18px] font-normal text-[#000000] font-Outfit">
                     Planning & Research
                   </h3>
                 </div>
@@ -141,7 +141,7 @@ const IndexPage = () => {
                 <div className="flex flex items-center mb-4 space-x-2">
                   <span className="inline-flex items-center justify-center w-[21px] h-[21px] rounded-full bg-[#3FBAFF]"></span>
 
-                  <h3 className="text-[20px] font-normal text-[#000000] font-Outfit">
+                  <h3 className="text-[18px] font-normal text-[#000000] font-Outfit">
                     Risk free Software Deliveries
                   </h3>
                 </div>
@@ -158,7 +158,7 @@ const IndexPage = () => {
                 <div className="flex items-center mb-4 space-x-2">
                   <span className="inline-flex items-center justify-center w-[21px] h-[21px] rounded-full bg-[#3FBAFF]"></span>
 
-                  <h3 className="text-[20px] font-normal text-[#000000] font-Outfit">
+                  <h3 className="text-[18px] font-normal text-[#000000] font-Outfit">
                     Result
                   </h3>
                 </div>

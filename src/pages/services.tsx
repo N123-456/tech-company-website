@@ -152,11 +152,11 @@ const Services = () => {
     <div>
       <div className="pt-[40px] bg-white flex flex-col items-center justify-center px-10">
         <section className="w-full max-w-7xl py-10 animate-fade-in">
-          <h2 className="text-[32px] font-medium text-center font-Outfit text-[#000000] mb-8  animate-slide-up">
+          <h2 className="text-[32px] sm:text-[28px] font-medium text-center font-Outfit text-[#000000] mb-8  animate-slide-up">
             We offer our services to
           </h2>
           <div className="flex md:flex-col sm:flex-col lg:flex-row md-only:flex-col xs:flex-col xs-sm:flex-col justify-around items-center py-6 animate-fade-in md:space-y-4 space-y-6">
-            <div className="w-[434px] h-[234px] border border-[#CCCCCC] hover:bg-purple-200 hover:shadow-md transition-all duration-300 animate-slide-up animate-delay-200">
+            <div className="w-[434px] h-[234px] xs-m:w-[200px] border border-[#CCCCCC] hover:bg-purple-200 hover:shadow-md transition-all duration-300 animate-slide-up animate-delay-200">
             <div className="text-center  ">
               <img src={Startup} alt="Maintenance Icon" className="mx-auto mb-4"/>
               
@@ -171,7 +171,7 @@ const Services = () => {
               </a>
             </div>
             </div>
-            <div className="w-[434px] h-[234px] border border-[#CCCCCC] hover:bg-purple-200 hover:shadow-md transition-all duration-300 animate-slide-up animate-delay-300">
+            <div className="w-[434px] h-[234px] xs-m:w-[200px] border border-[#CCCCCC] hover:bg-purple-200 hover:shadow-md transition-all duration-300 animate-slide-up animate-delay-300">
             <div className="text-center ">
              <img src={Team} alt="Maintenance Icon" className="mx-auto mb-4"/>
               <h3 className="text-[20px] font-Outfit font-medium text-[#000000] mb-8">
@@ -193,7 +193,7 @@ const Services = () => {
         <h2 className="text-[32px] font-medium text-center font-Outfit text-[#000000] mb-8  animate-slide-up">
           Industries we have expertise in
         </h2>
-        <p className="text-center mb-6 text-[#4A4A4A] font-Quicksand text-[15px] font-normal">
+        <p className="text-center mb-6 text-[#4A4A4A] font-Quicksand text-[13px] font-normal">
           CoinRows is an IT company providing software development services to
           Startups and Small to Medium size companies working in below
           industries:

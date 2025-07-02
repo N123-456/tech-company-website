@@ -10,6 +10,7 @@ module.exports = {
       'md-only': { min: '768px', max: '1023px' },
       'md2-only': { min: '767px', max: '900px' }, // Between md and lg
        'xs-sm': { min: '300px', max: '639px' },
+       'xs-m': { min: '100px', max: '200px' },
        'sm-md-range': { min: '400px', max: '767px' },
     },
       animation: {
