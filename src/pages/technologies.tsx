@@ -1,3 +1,4 @@
+"use-client"
 import React from "react";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { useStaticQuery, graphql } from "gatsby";

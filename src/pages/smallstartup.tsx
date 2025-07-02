@@ -1,155 +1,63 @@
+"use-client";
 import React from "react";
 import { AppLayout } from "../components/AppLayout/AppLayout";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { graphql, useStaticQuery } from "gatsby";
 
+import maintenance from "../assets/maintenance.svg";
+import Testing from "../assets/testing.svg";
+import Si from "../assets/SI.svg";
+import Csi from "../assets/CSI.svg";
+import Tc from "../assets/TC.svg";
+import Ui from "../assets/UI.svg";
+import Mvp from "../assets/MVP.svg";
+import Csd from "../assets/CSD.svg";
+import Wd from "../assets/WD.svg";
+import Mad from "../assets/MAD.svg";
+import Ec from "../assets/EC.svg";
+import Lsm from "../assets/LSM.svg";
+import Lsm2 from "../assets/LSM2.svg";
+import Da from "../assets/DA.svg";
+import Api from "../assets/API.svg";
+import Csd2 from "../assets/CSD2.svg";
+import Mas from "../assets/MAS.svg";
+import It from "../assets/IT.svg";
 const smallstartup = () => {
   const data = useStaticQuery(graphql`
     query {
-      mans: file(relativePath: { eq: "mans.png" }) {
+      logo2: file(relativePath: { eq: "logo2.png" }) {
+        childImageSharp {
+          gatsbyImageData(layout: FIXED)
+        }
+      }
+      whatsapp: file(relativePath: { eq: "whatsapp.png" }) {
         childImageSharp {
           gatsbyImageData(placeholder: BLURRED)
         }
       }
-      qa: file(relativePath: { eq: "qa.png" }) {
+      instagram: file(relativePath: { eq: "instagram.png" }) {
         childImageSharp {
           gatsbyImageData(placeholder: BLURRED)
         }
       }
-      si: file(relativePath: { eq: "si.png" }) {
+      facebook: file(relativePath: { eq: "facebook.png" }) {
         childImageSharp {
           gatsbyImageData(placeholder: BLURRED)
         }
       }
-      cs: file(relativePath: { eq: "cs.png" }) {
-        childImageSharp {
-          gatsbyImageData(placeholder: BLURRED)
-        }
-      }
-      tc: file(relativePath: { eq: "tc.png" }) {
-        childImageSharp {
-          gatsbyImageData(placeholder: BLURRED)
-        }
-      }
-      ui: file(relativePath: { eq: "ui.png" }) {
-        childImageSharp {
-          gatsbyImageData(placeholder: BLURRED)
-        }
-      }
-      mvp: file(relativePath: { eq: "mvp.png" }) {
-        childImageSharp {
-          gatsbyImageData(placeholder: BLURRED)
-        }
-      }
-      csd: file(relativePath: { eq: "csd.png" }) {
-        childImageSharp {
-          gatsbyImageData(placeholder: BLURRED)
-        }
-      }
-
-      wd: file(relativePath: { eq: "wd.png" }) {
-        childImageSharp {
-          gatsbyImageData(placeholder: BLURRED)
-        }
-      }
-      mad: file(relativePath: { eq: "mad.png" }) {
-        childImageSharp {
-          gatsbyImageData(placeholder: BLURRED)
-        }
-      }
-      ec: file(relativePath: { eq: "ec.png" }) {
-        childImageSharp {
-          gatsbyImageData(placeholder: BLURRED)
-        }
-      }
-      lsm: file(relativePath: { eq: "lsm.png" }) {
-        childImageSharp {
-          gatsbyImageData(placeholder: BLURRED)
-        }
-      }
-      lsm2: file(relativePath: { eq: "lsm2.png" }) {
-        childImageSharp {
-          gatsbyImageData(placeholder: BLURRED)
-        }
-      }
-      da: file(relativePath: { eq: "da.png" }) {
-        childImageSharp {
-          gatsbyImageData(placeholder: BLURRED)
-        }
-      }
-      api: file(relativePath: { eq: "api.png" }) {
-        childImageSharp {
-          gatsbyImageData(placeholder: BLURRED)
-        }
-      }
-      csd2: file(relativePath: { eq: "csd2.png" }) {
-        childImageSharp {
-          gatsbyImageData(placeholder: BLURRED)
-        }
-      }
-      ms: file(relativePath: { eq: "ms.png" }) {
-        childImageSharp {
-          gatsbyImageData(placeholder: BLURRED)
-        }
-      }
-      itc: file(relativePath: { eq: "itc.png" }) {
-        childImageSharp {
-          gatsbyImageData(placeholder: BLURRED)
-        }
-      }
-         logo2: file(relativePath: { eq: "logo2.png" }) {
-                childImageSharp {
-                  gatsbyImageData(placeholder: BLURRED)
-                }
-              }
-                 whatsapp: file(relativePath: { eq: "whatsapp.png" }) {
-                childImageSharp {
-                  gatsbyImageData(placeholder: BLURRED)
-                }
-              }
-              instagram: file(relativePath: { eq: "instagram.png" }) {
-                childImageSharp {
-                  gatsbyImageData(placeholder: BLURRED)
-                }
-              }
-              facebook: file(relativePath: { eq: "facebook.png" }) {
-                childImageSharp {
-                  gatsbyImageData(placeholder: BLURRED)
-                }
-              }
     }
   `);
 
-  const mans = getImage(data.mans);
-  const qa = getImage(data.qa);
-  const si = getImage(data.si);
-  const cs = getImage(data.cs);
-  const tc = getImage(data.tc);
-  const ui = getImage(data.ui);
-  const mvp = getImage(data.mvp);
-  const csd = getImage(data.csd);
-
-  const wd = getImage(data.wd);
-  const mad = getImage(data.mad);
-  const ec = getImage(data.ec);
-  const lsm = getImage(data.lsm);
-  const lsm2 = getImage(data.lsm2);
-  const da = getImage(data.da);
-  const api = getImage(data.api);
-  const csd2 = getImage(data.csd2);
-  const ms = getImage(data.ms);
-  const itc = getImage(data.itc);
-
-    const logo2 = getImage(data.logo2);
-    const whatsapp = getImage(data.whatsapp);
-      const instagram = getImage(data.instagram);
-      const facebook = getImage(data.facebook);
+  const logo2 = getImage(data.logo2);
+  const whatsapp = getImage(data.whatsapp);
+  const instagram = getImage(data.instagram);
+  const facebook = getImage(data.facebook);
   return (
     <AppLayout>
       <div>
         <div className="pt-[80px] bg-white relative overflow-hidden">
           {/* Hero Section with Background Blob */}
-          <div className="absolute top-[-40px] left-[-150px] w-[400px] z-0 opacity-70">
+          <div className="absolute top-[-40px] left-[-150px] w-[400px] z-0 opacity-70 animate-float">
             <svg
               viewBox="0 0 600 600"
               xmlns="http://www.w3.org/2000/svg"
@@ -170,7 +78,7 @@ const smallstartup = () => {
           </div>
 
           {/* bottom-left */}
-          <div className="absolute top-[-150px] right-[-150px] w-[400px] z-0 opacity-70">
+          <div className="absolute top-[-150px] right-[-150px] w-[400px] z-0 opacity-70 animate-floatReverse">
             <svg
               viewBox="0 0 600 600"
               xmlns="http://www.w3.org/2000/svg"
@@ -190,16 +98,16 @@ const smallstartup = () => {
             </svg>
           </div>
 
-          <div className="flex flex-col lg:items-center justify-center pt-20">
+          <div className=" flex flex-col lg:items-center justify-center pt-20">
             <h1 className="text-[#821AEA] font-Outfit text-[40px] font-medium pl-[15px]">
               We have a range of services for
               <br />
             </h1>
-            <h1 className="text-[#821AEA] font-Outfit text-[40px] md:text-[32px] font-extrabold sm:text-left pl-[15px] sm:pl-[1px]">
+            <h1 className="text-[#821AEA] font-Outfit lg:text-[40px] md:text-[38px] sm-md-range:text-[38px] sm-md-range:pl-5 sm:text[32px] font-extrabold sm:text-left pl-[15px] sm:pl-[1px] md:pl-5">
               <span>Startups and SME’s </span>
             </h1>
 
-            <div className="pt-5 md:pt-10 md:pl-10">
+            <div className="pt-5 md:pt-10 md:pl-5 sm:pl-5 md-only:pl-4">
               <button className="w-[95px] h-[42px] px-[22px] py-[10px] bg-[#821AEA] text-[#FFFFFF] font-Outfit text-[15px] font-normal border rounded-xl">
                 Explore
               </button>
@@ -215,16 +123,12 @@ const smallstartup = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
                 {/* Healthcare */}
                 <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-                  <div className="flex mb-2">
-                    {mans && (
-                      <GatsbyImage
-                        image={mans}
-                        alt="Healthcare Logo"
-                        className="hover:scale-110 transition-transform duration-300 rounded-full"
-                        imgStyle={{ transition: "transform 0.3s ease" }} // Ensure image scales
-                      />
-                    )}
+                  <div className="w-[64px] h-[64px] rounded-full p-[2px] bg-gradient-to-br from-[#3FBAFF] via-[#821AEA] to-[#B671FB] mb-2">
+                    <div className="w-full h-full bg-white rounded-full flex items-center justify-center">
+                      <img src={maintenance} alt="Maintenance Icon" />
+                    </div>
                   </div>
+
                   <h3 className="text-20 font-semibold font-Outfit text-[#000000] mb-2">
                     Maintenance & Support
                   </h3>
@@ -239,15 +143,14 @@ const smallstartup = () => {
 
                 {/* Education */}
                 <div className="bg-white p-6  hover:shadow-lg transition-shadow duration-300">
-                  <div className="flex mb-2">
-                    {qa && (
-                      <GatsbyImage
-                        image={qa}
-                        alt="Logo"
-                        className="hover:scale-110 transition-transform duration-300 rounded-full border-bg-purple-700 shadow-md"
-                        imgStyle={{ transition: "transform 0.3s ease" }}
+                  <div className="w-[64px] h-[64px] rounded-full p-[2px] bg-gradient-to-br from-[#3FBAFF] via-[#821AEA] to-[#B671FB] mb-2">
+                    <div className="w-full h-full bg-white rounded-full flex items-center justify-center">
+                      <img
+                        src={Testing}
+                        alt="Testing"
+                        className="w-[30px] h-[30px]"
                       />
-                    )}
+                    </div>
                   </div>
                   <h3 className="text-20 font-semibold font-Outfit text-[#000000] mb-2">
                     Quality Assurance & Testing
@@ -263,15 +166,10 @@ const smallstartup = () => {
 
                 {/* Retail */}
                 <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-                  <div className="flex mb-2">
-                    {si && (
-                      <GatsbyImage
-                        image={si}
-                        alt="Retail Logo"
-                        className="hover:scale-110 transition-transform duration-300 rounded-full"
-                        imgStyle={{ transition: "transform 0.3s ease" }}
-                      />
-                    )}
+                  <div className="w-[64px] h-[64px] rounded-full p-[2px] bg-gradient-to-br from-[#3FBAFF] via-[#821AEA] to-[#B671FB] mb-2">
+                    <div className="w-full h-full bg-white rounded-full flex items-center justify-center">
+                      <img src={Si} alt="SI" className="w-[30px] h-[30px]" />
+                    </div>
                   </div>
                   <h3 className="text-20 font-semibold font-Outfit text-[#000000] mb-2">
                     Software Integration
@@ -287,15 +185,10 @@ const smallstartup = () => {
 
                 {/* Logistics & Transportation */}
                 <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-                  <div className="flex mb-2">
-                    {cs && (
-                      <GatsbyImage
-                        image={cs}
-                        alt="Logistics Logo"
-                        className="hover:scale-110 transition-transform duration-300 rounded-full"
-                        imgStyle={{ transition: "transform 0.3s ease" }}
-                      />
-                    )}
+                  <div className="w-[64px] h-[64px] rounded-full p-[2px] bg-gradient-to-br from-[#3FBAFF] via-[#821AEA] to-[#B671FB] mb-2">
+                    <div className="w-full h-full bg-white rounded-full flex items-center justify-center">
+                      <img src={Csi} alt="CSI" className="w-[30px] h-[30px]" />
+                    </div>
                   </div>
                   <h3 className="text-20 font-semibold font-Outfit text-[#000000] mb-2">
                     Cloud Solutions & Infratstructure
@@ -312,15 +205,10 @@ const smallstartup = () => {
 
                 {/* Manufacturing */}
                 <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-                  <div className="flex mb-2">
-                    {tc && (
-                      <GatsbyImage
-                        image={tc}
-                        alt="Manufacturing Logo"
-                        className="hover:scale-110 transition-transform duration-300 rounded-full"
-                        imgStyle={{ transition: "transform 0.3s ease" }}
-                      />
-                    )}
+                  <div className="w-[64px] h-[64px] rounded-full p-[2px] bg-gradient-to-br from-[#3FBAFF] via-[#821AEA] to-[#B671FB] mb-2">
+                    <div className="w-full h-full bg-white rounded-full flex items-center justify-center">
+                      <img src={Tc} alt="TC" className="w-[30px] h-[30px]" />
+                    </div>
                   </div>
                   <h3 className="text-20 font-semibold font-Outfit text-[#000000] mb-2">
                     Technology Consulting
@@ -336,15 +224,10 @@ const smallstartup = () => {
 
                 {/* Agriculture */}
                 <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-                  <div className="flex mb-2">
-                    {ui && (
-                      <GatsbyImage
-                        image={ui}
-                        alt="Logo"
-                        className="hover:scale-110 transition-transform duration-300 rounded-full"
-                        imgStyle={{ transition: "transform 0.3s ease" }}
-                      />
-                    )}
+                  <div className="w-[64px] h-[64px] rounded-full p-[2px] bg-gradient-to-br from-[#3FBAFF] via-[#821AEA] to-[#B671FB] mb-2">
+                    <div className="w-full h-full bg-white rounded-full flex items-center justify-center">
+                      <img src={Ui} alt="UI" className="w-[30px] h-[30px]" />
+                    </div>
                   </div>
                   <h3 className="text-20 font-semibold font-Outfit text-[#000000] mb-2">
                     UI/UX Design
@@ -360,15 +243,10 @@ const smallstartup = () => {
 
                 {/* Agriculture */}
                 <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-                  <div className="flex mb-2">
-                    {mvp && (
-                      <GatsbyImage
-                        image={mvp}
-                        alt="Agriculture Logo"
-                        className="hover:scale-110 transition-transform duration-300 rounded-full"
-                        imgStyle={{ transition: "transform 0.3s ease" }}
-                      />
-                    )}
+                  <div className="w-[64px] h-[64px] rounded-full p-[2px] bg-gradient-to-br from-[#3FBAFF] via-[#821AEA] to-[#B671FB] mb-2">
+                    <div className="w-full h-full bg-white rounded-full flex items-center justify-center">
+                      <img src={Mvp} alt="MVP" className="w-[30px] h-[30px]" />
+                    </div>
                   </div>
                   <h3 className="text-20 font-semibold font-Outfit text-[#000000] mb-2">
                     Minimum Viable Product (MVP) Development
@@ -384,15 +262,10 @@ const smallstartup = () => {
 
                 {/* Agriculture */}
                 <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-                  <div className="flex mb-2">
-                    {csd && (
-                      <GatsbyImage
-                        image={csd}
-                        alt="Agriculture Logo"
-                        className="hover:scale-110 transition-transform duration-300 rounded-full"
-                        imgStyle={{ transition: "transform 0.3s ease" }}
-                      />
-                    )}
+                  <div className="w-[64px] h-[64px] rounded-full p-[2px] bg-gradient-to-br from-[#3FBAFF] via-[#821AEA] to-[#B671FB] mb-2">
+                    <div className="w-full h-full bg-white rounded-full flex items-center justify-center">
+                      <img src={Csd} alt="CSD" className="w-[30px] h-[30px]" />
+                    </div>
                   </div>
                   <h3 className="text-20 font-semibold font-Outfit text-[#000000] mb-2">
                     Custom Software Development
@@ -418,15 +291,10 @@ const smallstartup = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
                 {/* Healthcare */}
                 <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-                  <div className="flex mb-2">
-                    {wd && (
-                      <GatsbyImage
-                        image={wd}
-                        alt="Healthcare Logo"
-                        className="hover:scale-110 transition-transform duration-300 rounded-full"
-                        imgStyle={{ transition: "transform 0.3s ease" }} // Ensure image scales
-                      />
-                    )}
+                  <div className="w-[64px] h-[64px] rounded-full p-[2px] bg-gradient-to-br from-[#3FBAFF] via-[#821AEA] to-[#B671FB] mb-2">
+                    <div className="w-full h-full bg-white rounded-full flex items-center justify-center">
+                      <img src={Wd} alt="WD" className="w-[30px] h-[30px]" />
+                    </div>
                   </div>
                   <h3 className="text-20 font-semibold font-Outfit text-[#000000] mb-2">
                     Web Development
@@ -442,15 +310,10 @@ const smallstartup = () => {
 
                 {/* Education */}
                 <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-                  <div className="flex mb-2">
-                    {mad && (
-                      <GatsbyImage
-                        image={mad}
-                        alt="Logo"
-                        className="hover:scale-110 transition-transform duration-300 rounded-full"
-                        imgStyle={{ transition: "transform 0.3s ease" }}
-                      />
-                    )}
+                  <div className="w-[64px] h-[64px] rounded-full p-[2px] bg-gradient-to-br from-[#3FBAFF] via-[#821AEA] to-[#B671FB] mb-2">
+                    <div className="w-full h-full bg-white rounded-full flex items-center justify-center">
+                      <img src={Mad} alt="MAD" className="w-[30px] h-[30px]" />
+                    </div>
                   </div>
                   <h3 className="text-20 font-semibold font-Outfit text-[#000000] mb-2">
                     Mobile App Development
@@ -466,15 +329,10 @@ const smallstartup = () => {
 
                 {/* Retail */}
                 <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-                  <div className="flex mb-2">
-                    {ec && (
-                      <GatsbyImage
-                        image={ec}
-                        alt="Retail Logo"
-                        className="hover:scale-110 transition-transform duration-300 rounded-full"
-                        imgStyle={{ transition: "transform 0.3s ease" }}
-                      />
-                    )}
+                  <div className="w-[64px] h-[64px] rounded-full p-[2px] bg-gradient-to-br from-[#3FBAFF] via-[#821AEA] to-[#B671FB] mb-2">
+                    <div className="w-full h-full bg-white rounded-full flex items-center justify-center">
+                      <img src={Ec} alt="EC" className="w-[30px] h-[30px]" />
+                    </div>
                   </div>
                   <h3 className="text-20 font-semibold font-Outfit text-[#000000] mb-2">
                     E-commerce Solutions
@@ -489,15 +347,10 @@ const smallstartup = () => {
 
                 {/* Logistics & Transportation */}
                 <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-                  <div className="flex mb-2">
-                    {lsm && (
-                      <GatsbyImage
-                        image={lsm}
-                        alt="Logistics Logo"
-                        className="hover:scale-110 transition-transform duration-300 rounded-full"
-                        imgStyle={{ transition: "transform 0.3s ease" }}
-                      />
-                    )}
+                  <div className="w-[64px] h-[64px] rounded-full p-[2px] bg-gradient-to-br from-[#3FBAFF] via-[#821AEA] to-[#B671FB] mb-2">
+                    <div className="w-full h-full bg-white rounded-full flex items-center justify-center">
+                      <img src={Lsm} alt="LSM" className="w-[30px] h-[30px]" />
+                    </div>
                   </div>
                   <h3 className="text-20 font-semibold font-Outfit text-[#000000] mb-2">
                     Legacy System Modernization
@@ -513,16 +366,16 @@ const smallstartup = () => {
 
                 {/* Manufacturing */}
                 <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-                  <div className="flex mb-2">
-                    {lsm2 && (
-                      <GatsbyImage
-                        image={lsm2}
-                        alt="Manufacturing Logo"
-                        className="hover:scale-110 transition-transform duration-300 rounded-full"
-                        imgStyle={{ transition: "transform 0.3s ease" }}
+                  <div className="w-[64px] h-[64px] rounded-full p-[2px] bg-gradient-to-br from-[#3FBAFF] via-[#821AEA] to-[#B671FB] mb-2">
+                    <div className="w-full h-full bg-white rounded-full flex items-center justify-center">
+                      <img
+                        src={Lsm2}
+                        alt="LSM2"
+                        className="w-[30px] h-[30px]"
                       />
-                    )}
+                    </div>
                   </div>
+
                   <h3 className="text-20 font-semibold font-Outfit text-[#000000] mb-2">
                     Legacy System Modernization
                   </h3>
@@ -537,15 +390,10 @@ const smallstartup = () => {
 
                 {/* Agriculture */}
                 <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-                  <div className="flex mb-2">
-                    {da && (
-                      <GatsbyImage
-                        image={da}
-                        alt="Logo"
-                        className="hover:scale-110 transition-transform duration-300 rounded-full"
-                        imgStyle={{ transition: "transform 0.3s ease" }}
-                      />
-                    )}
+                  <div className="w-[64px] h-[64px] rounded-full p-[2px] bg-gradient-to-br from-[#3FBAFF] via-[#821AEA] to-[#B671FB] mb-2">
+                    <div className="w-full h-full bg-white rounded-full flex items-center justify-center">
+                      <img src={Da} alt="DA" className="w-[30px] h-[30px]" />
+                    </div>
                   </div>
                   <h3 className="text-20 font-semibold font-Outfit text-[#000000] mb-2">
                     Data Analytics and Business Intelligence
@@ -561,15 +409,10 @@ const smallstartup = () => {
 
                 {/* Agriculture */}
                 <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-                  <div className="flex mb-2">
-                    {api && (
-                      <GatsbyImage
-                        image={api}
-                        alt="Agriculture Logo"
-                        className="hover:scale-110 transition-transform duration-300 rounded-full"
-                        imgStyle={{ transition: "transform 0.3s ease" }}
-                      />
-                    )}
+                  <div className="w-[64px] h-[64px] rounded-full p-[2px] bg-gradient-to-br from-[#3FBAFF] via-[#821AEA] to-[#B671FB] mb-2">
+                    <div className="w-full h-full bg-white rounded-full flex items-center justify-center">
+                      <img src={Api} alt="API" className="w-[30px] h-[30px]" />
+                    </div>
                   </div>
                   <h3 className="text-20 font-semibold font-Outfit text-[#000000] mb-2">
                     Integration and API Development
@@ -586,15 +429,14 @@ const smallstartup = () => {
 
                 {/* Agriculture */}
                 <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-                  <div className="flex mb-2">
-                    {csd2 && (
-                      <GatsbyImage
-                        image={csd2}
-                        alt="Agriculture Logo"
-                        className="hover:scale-110 transition-transform duration-300 rounded-full"
-                        imgStyle={{ transition: "transform 0.3s ease" }}
+                  <div className="w-[64px] h-[64px] rounded-full p-[2px] bg-gradient-to-br from-[#3FBAFF] via-[#821AEA] to-[#B671FB] mb-2">
+                    <div className="w-full h-full bg-white rounded-full flex items-center justify-center">
+                      <img
+                        src={Csd2}
+                        alt="CSD2"
+                        className="w-[30px] h-[30px]"
                       />
-                    )}
+                    </div>
                   </div>
                   <h3 className="text-20 font-semibold font-Outfit text-[#000000] mb-2">
                     Custom Software Development
@@ -609,15 +451,10 @@ const smallstartup = () => {
                 </div>
 
                 <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-                  <div className="flex mb-2">
-                    {ms && (
-                      <GatsbyImage
-                        image={ms}
-                        alt="Agriculture Logo"
-                        className="hover:scale-110 transition-transform duration-300 rounded-full"
-                        imgStyle={{ transition: "transform 0.3s ease" }}
-                      />
-                    )}
+                  <div className="w-[64px] h-[64px] rounded-full p-[2px] bg-gradient-to-br from-[#3FBAFF] via-[#821AEA] to-[#B671FB] mb-2">
+                    <div className="w-full h-full bg-white rounded-full flex items-center justify-center">
+                      <img src={Mas} alt="MAS" className="w-[30px] h-[30px]" />
+                    </div>
                   </div>
                   <h3 className="text-20 font-semibold font-Outfit text-[#000000] mb-2">
                     Maintenance and Support
@@ -632,15 +469,10 @@ const smallstartup = () => {
                 </div>
 
                 <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-                  <div className="flex mb-2">
-                    {itc && (
-                      <GatsbyImage
-                        image={itc}
-                        alt="Agriculture Logo"
-                        className="hover:scale-110 transition-transform duration-300 rounded-full"
-                        imgStyle={{ transition: "transform 0.3s ease" }}
-                      />
-                    )}
+                  <div className="w-[64px] h-[64px] rounded-full p-[2px] bg-gradient-to-br from-[#3FBAFF] via-[#821AEA] to-[#B671FB] mb-2">
+                    <div className="w-full h-full bg-white rounded-full flex items-center justify-center">
+                      <img src={It} alt="IT" className="w-[30px] h-[30px]" />
+                    </div>
                   </div>
                   <h3 className="text-20 font-semibold font-Outfit text-[#000000] mb-2">
                     IT Consulting
@@ -657,9 +489,8 @@ const smallstartup = () => {
             </div>
           </div>
         </div>
-        <div className="min-h-screen flex flex-col items-center pt-10">
-    
-          <footer className="bg-gray-100 rounded-lg p-4 text-center w-full max-w-[1301px] shadow-lg">
+        <div className="flex flex-col items-center pt-10 px-4">
+          <footer className="bg-gray-100 rounded-lg p-4 text-center max-w-[1301px] shadow-lg">
             <div className="flex justify-center items-center mb-4">
               <div>
                 {logo2 && (
@@ -667,12 +498,12 @@ const smallstartup = () => {
                 )}
               </div>
             </div>
-    
+
             <p className="text-[#4A4A4A] text-[15px] font-Outfit font-normal mb-4">
-              Every project we deliver comes with full system understanding for your
-              internal team, not just working code
+              Every project we deliver comes with full system understanding for
+              your internal team, not just working code
             </p>
-    
+
             <div className="flex flex-col md:flex-row justify-center items-center mb-4 space-y-4 md:space-y-0 md:space-x-4">
               <input
                 type="email"
@@ -683,7 +514,7 @@ const smallstartup = () => {
                 Subscribe
               </button>
             </div>
-    
+
             <div className="flex justify-center space-x-4 mb-4">
               <a
                 href="#"
@@ -725,13 +556,13 @@ const smallstartup = () => {
                 )}
               </a>
             </div>
-    
+
             <div className="border-b border-bg-[#E5E5E5] "></div>
             <p className="text-[#4A4A4A] text-[15px] font-Outfit font-normal pt-5">
               © 2023 Col'n Rows. All Rights Reserved.
             </p>
           </footer>
-        </div> 
+        </div>
       </div>
     </AppLayout>
   );

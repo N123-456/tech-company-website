@@ -79,17 +79,17 @@ const Freequote = () => {
       </h2>
 
       <div className="flex flex-col md:flex-row items-center justify-center max-w-full md:w-[1141px] md:h-[519px] bg-white p-4 pt-10 md:space-x-10 space-y-6 md:space-y-0">
-        <div className="md:w-1/2 p-6">
+        <div className="md:h-[400px] lg:h-auto md:w-1/2 p-6">
           {signin && (
             <GatsbyImage
               image={signin}
               alt="Companies illustration"
-              className="mx-auto h-[509px] mb-4 rounded-xl transform transition duration-300 hover:scale-105"
+              className="mx-auto mb-4 rounded-xl transform transition duration-300 hover:scale-105"
             />
           )}
         </div>
 
-        <div className="w-full h-auto md:h-[509px] md:w-1/2 p-6 bg-white transform transition duration-300 hover:shadow-xl">
+        <div className="w-full h-auto md:h-[400px]  md:w-1/2 p-6 bg-white transform transition duration-300 hover:shadow-xl">
           <form ref={form} onSubmit={sendEmail} className="space-y-4">
             <input
               type="text"
@@ -117,7 +117,7 @@ const Freequote = () => {
             <div className="flex md:pl-[200px] justify-center">
               <button
                 type="submit"
-                className="w-[153px] h-[42px] text-[15px] bg-[#821AEA] text-white font-Outfit font-normal p-2 rounded-xl hover:bg-purple-700 transition duration-300"
+                className="w-[153px] h-[42px] text-[15px] md:text-[10px] bg-[#821AEA] text-white font-Outfit font-normal p-2 rounded-xl hover:bg-purple-700 transition duration-300"
               >
                 Get a free quote
               </button>
@@ -126,7 +126,7 @@ const Freequote = () => {
         </div>
       </div>
       <div className="pt-10">
-        <footer className="bg-[#F31313] rounded-lg p-4 text-center w-full max-w-[1301px] shadow-lg">
+        <footer className="bg-gray-100 rounded-lg p-4 text-center w-full max-w-[1301px] shadow-lg">
           <div className="flex justify-center items-center mb-4">
             <div>
               {logo2 && (

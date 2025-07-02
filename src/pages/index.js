@@ -36,7 +36,7 @@ const IndexPage = () => {
       <main>
         <div className="pt-[80px] bg-white relative overflow-hidden">
           {/* Hero Section with Background Blob */}
-          <div className="absolute top-[-40px] left-[-150px] w-[400px] z-0 opacity-70">
+          <div className="absolute top-[-40px] left-[-150px] w-[400px] z-0 opacity-70 animate-float">
             <svg
               viewBox="0 0 600 600"
               xmlns="http://www.w3.org/2000/svg"
@@ -57,7 +57,7 @@ const IndexPage = () => {
           </div>
 
           {/* bottom-left */}
-          <div className="absolute top-[-150px] right-[-150px] w-[400px] z-0 opacity-70">
+          <div className="absolute top-[-150px] right-[-150px] w-[400px] z-0 opacity-70 animate-floatReverse">
   <svg
     viewBox="0 0 600 600"
     xmlns="http://www.w3.org/2000/svg"
@@ -106,7 +106,7 @@ const IndexPage = () => {
                     <GatsbyImage
                       image={sideImage}
                       alt="Side illustration"
-                      className="w-[420px] h-auto"
+                    
                     />
                   )}
                 </div>
@@ -119,7 +119,7 @@ const IndexPage = () => {
             <h2 className="text-[32px] font-medium font-Outfit text-[#000000] text-center mb-8 animate-fade-in">
               What we do?
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 border-b border-[#3FBAFF] ">
+            <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 border-b border-[#3FBAFF] ">
               {/* Planning & Research */}
               <div className="bg-white p-6  shadow-lg border border-white hover:shadow-lg hover:bg-blue-50 transition-all duration-300 animate-slide-up">
                 <div className="flex flex items-center mb-4 space-x-2">

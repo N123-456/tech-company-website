@@ -1,15 +1,11 @@
+"use-client"
 import React, { useEffect, useState } from "react";
 import "../styles/global.css";
 import { graphql, useStaticQuery } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { AppLayout } from "../components/AppLayout/AppLayout";
-// type Testimonial = {
-//   id: Number;
-//   name: string;
-//   title: string;
-//   image: string;
-  
-// };
+import Project from "../assets/PROJECT.svg";
+import Project2 from "../assets/PROJECT2.svg";
 const Projects= () => {
   const data = useStaticQuery(graphql`
     query {
@@ -26,7 +22,7 @@ const Projects= () => {
     }
   `);
 
-  const projectpic = getImage(data.projectpic);
+ 
   const testimonal = getImage(data.testimonal);
 
   const projects = [
@@ -46,28 +42,7 @@ const Projects= () => {
     },
   ];
 
-  // const testimonials= [
-  //   {
-  //     id: 1,
-  //     name: "Maria Slakovic",
-  //     title: "CEO, Snitch.in",
-  //     image: "/images/maria1.jpg",
-  //     description:'lorem ispum'
-      
-  //   },
-  //   {
-  //     id: 2,
-  //     name: "Maria Slakovic",
-  //     title: "CEO, Snitch.in",
-  //     image: "/images/maria2.jpg",
-  //   },
-  //   {
-  //     id: 3,
-  //     name: "Maria Slakovic",
-  //     title: "CEO, Snitch.in",
-  //     image: "/images/maria3.jpg",
-  //   },
-  // ];
+  
  const [testimonials, setTestimonials] = useState<any[]>([]);
   const [selectedIndex, setSelectedIndex] = useState(0);
 
@@ -131,14 +106,19 @@ const Projects= () => {
               key={project.id}
               className="flex flex-col md:flex-row bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-105 transition duration-300 ease-in-out animate-fadeIn"
             >
-              <div className="flex-shrink-0">
-                {projectpic && (
-                  <GatsbyImage
-                    image={projectpic}
-                    alt="Startups illustration"
-                    className="bg-white w-full md:w-auto"
-                  />
-                )}
+              <div className="relative flex-shrink-0">
+                 <img
+                        src={Project}
+                        alt="Project"
+                        className="hover:scale-110 transition-transform duration-300"
+                      />
+                       <img
+                        src={Project2}
+                        alt="Project"
+                        className="absolute top-4 left-4 right-4 bottom-4 object-contain p-2"
+                      />
+
+               
               </div>
               <div className="p-4">
                 <h2 className="text-[32px] font-normal font-Outfit mb-2 text-[#393939]">

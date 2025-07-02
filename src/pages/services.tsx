@@ -1,9 +1,18 @@
+"use-client"
 import * as React from "react";
 import { AppLayout } from "../components/AppLayout/AppLayout";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { graphql, useStaticQuery } from "gatsby";
 import TechStack from "./technologies";
+import Heart from "../assets/HEART.svg";
+import School from "../assets/SCHOOL.svg";
+import Store from "../assets/STORE.svg";
+import Shipping from "../assets/SHIPPING.svg";
+import Manifac from "../assets/MANIFAC.svg";
+import Agri from "../assets/AGRI.svg";
 
+import Startup from "../assets/STARTUP.svg";
+import Team from "../assets/TEAM.svg";
 const Services = () => {
   const data = useStaticQuery(graphql`
     query {
@@ -17,36 +26,7 @@ const Services = () => {
           gatsbyImageData(placeholder: BLURRED)
         }
       }
-      healthcareLogo: file(relativePath: { eq: "cardiology.png" }) {
-        childImageSharp {
-          gatsbyImageData(width: 50, height: 50)
-        }
-      }
-      educationLogo: file(relativePath: { eq: "school.png" }) {
-        childImageSharp {
-          gatsbyImageData(width: 50, height: 50)
-        }
-      }
-      retailLogo: file(relativePath: { eq: "storefront.png" }) {
-        childImageSharp {
-          gatsbyImageData(width: 50, height: 50)
-        }
-      }
-      logisticsLogo: file(relativePath: { eq: "local_shipping.png" }) {
-        childImageSharp {
-          gatsbyImageData(width: 50, height: 50)
-        }
-      }
-      manufacturingLogo: file(relativePath: { eq: "manufacturingLogo.png" }) {
-        childImageSharp {
-          gatsbyImageData(width: 50, height: 50)
-        }
-      }
-      agricultureLogo: file(relativePath: { eq: "agriculture.png" }) {
-        childImageSharp {
-          gatsbyImageData(width: 50, height: 50)
-        }
-      }
+  
         angular: file(relativePath: { eq: "angular.png" }) {
         childImageSharp {
           gatsbyImageData(width: 80, placeholder: BLURRED)
@@ -143,12 +123,7 @@ const Services = () => {
 
   const startupImage = getImage(data.startupImage);
   const companyImage = getImage(data.companyImage);
-  const healthcareLogo = getImage(data.healthcareLogo);
-  const educationLogo = getImage(data.educationLogo);
-  const retailLogo = getImage(data.retailLogo);
-  const logisticsLogo = getImage(data.logisticsLogo);
-  const manufacturingLogo = getImage(data.manufacturingLogo);
-  const agricultureLogo = getImage(data.agricultureLogo);
+  
 
 
 
@@ -180,16 +155,12 @@ const Services = () => {
           <h2 className="text-[32px] font-medium text-center font-Outfit text-[#000000] mb-8  animate-slide-up">
             We offer our services to
           </h2>
-          <div className="flex flex-col sm:flex-row justify-around items-center py-6 animate-fade-in">
-            <div className="text-center animate-slide-up animate-delay-200 ">
-              {startupImage && (
-                <GatsbyImage
-                  image={startupImage}
-                  alt="Startups illustration"
-                  className="w-[127px] h-[90px] mx-auto mb-4 bg-white"
-                />
-              )}
-              <h3 className="text-[20px] font-Outfit font-medium text-[#000000] mb-2">
+          <div className="flex md:flex-col sm:flex-col lg:flex-row md-only:flex-col xs:flex-col xs-sm:flex-col justify-around items-center py-6 animate-fade-in md:space-y-4 space-y-6">
+            <div className="w-[434px] h-[234px] border border-[#CCCCCC] hover:bg-purple-200 hover:shadow-md transition-all duration-300 animate-slide-up animate-delay-200">
+            <div className="text-center  ">
+              <img src={Startup} alt="Maintenance Icon" className="mx-auto mb-4"/>
+              
+              <h3 className="text-[20px] font-Outfit font-medium text-[#000000] mb-8">
                 Startups
               </h3>
               <a
@@ -199,15 +170,11 @@ const Services = () => {
                 View Services →
               </a>
             </div>
-            <div className="text-center animate-slide-up animate-delay-300">
-              {companyImage && (
-                <GatsbyImage
-                  image={companyImage}
-                  alt="Companies illustration"
-                  className="w-[145px] h-[78px] mx-auto mb-4"
-                />
-              )}
-              <h3 className="text-[20px] font-Outfit font-medium text-[#000000] mb-2">
+            </div>
+            <div className="w-[434px] h-[234px] border border-[#CCCCCC] hover:bg-purple-200 hover:shadow-md transition-all duration-300 animate-slide-up animate-delay-300">
+            <div className="text-center ">
+             <img src={Team} alt="Maintenance Icon" className="mx-auto mb-4"/>
+              <h3 className="text-[20px] font-Outfit font-medium text-[#000000] mb-8">
                 Small Medium Sized Companies
               </h3>
               <a
@@ -216,6 +183,7 @@ const Services = () => {
               >
                 View Services →
               </a>
+            </div>
             </div>
           </div>
         </section>
@@ -235,14 +203,11 @@ const Services = () => {
           {/* Healthcare */}
           <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
             <div className="flex mb-2">
-              {healthcareLogo && (
-                <GatsbyImage
-                  image={healthcareLogo}
-                  alt="Healthcare Logo"
-                  className="hover:scale-110 transition-transform duration-300"
-                  imgStyle={{ transition: "transform 0.3s ease" }} // Ensure image scales
-                />
-              )}
+              <img
+                        src={Heart}
+                        alt="Testing"
+                        className="hover:scale-110 transition-transform duration-300"
+                      />
             </div>
             <h3 className="text-[20px] font-Outfit font-normal text-[#000000] mb-2">
               Healthcare
@@ -261,14 +226,11 @@ const Services = () => {
           {/* Education */}
           <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
             <div className="flex mb-2">
-              {educationLogo && (
-                <GatsbyImage
-                  image={educationLogo}
-                  alt="Education Logo"
-                  className="hover:scale-110 transition-transform duration-300"
-                  imgStyle={{ transition: "transform 0.3s ease" }}
-                />
-              )}
+               <img
+                        src={School}
+                        alt="school"
+                        className="hover:scale-110 transition-transform duration-300"
+                      />
             </div>
             <h3 className="text-[20px] font-Outfit font-normal text-[#000000] mb-2">
               Education
@@ -284,14 +246,11 @@ const Services = () => {
           {/* Retail */}
           <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
             <div className="flex mb-2">
-              {retailLogo && (
-                <GatsbyImage
-                  image={retailLogo}
-                  alt="Retail Logo"
-                  className="hover:scale-110 transition-transform duration-300"
-                  imgStyle={{ transition: "transform 0.3s ease" }}
-                />
-              )}
+              <img
+                        src={Store}
+                        alt="store"
+                        className="hover:scale-110 transition-transform duration-300"
+                      />
             </div>
             <h3 className="text-[20px] font-Outfit font-normal text-[#000000] mb-2">
               Retail
@@ -308,14 +267,11 @@ const Services = () => {
           {/* Logistics & Transportation */}
           <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
             <div className="flex mb-2">
-              {logisticsLogo && (
-                <GatsbyImage
-                  image={logisticsLogo}
-                  alt="Logistics Logo"
-                  className="hover:scale-110 transition-transform duration-300"
-                  imgStyle={{ transition: "transform 0.3s ease" }}
-                />
-              )}
+              <img
+                        src={Shipping}
+                        alt="Shipping"
+                        className="hover:scale-110 transition-transform duration-300"
+                      />
             </div>
             <h3 className="text-[20px] font-Outfit font-normal text-[#000000] mb-2">
               Logistics & Transportation
@@ -332,14 +288,11 @@ const Services = () => {
           {/* Manufacturing */}
           <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
             <div className="flex mb-2">
-              {manufacturingLogo && (
-                <GatsbyImage
-                  image={manufacturingLogo}
-                  alt="Manufacturing Logo"
-                  className="hover:scale-110 transition-transform duration-300"
-                  imgStyle={{ transition: "transform 0.3s ease" }}
-                />
-              )}
+             <img
+                        src={Manifac}
+                        alt="MANIFEC"
+                        className="hover:scale-110 transition-transform duration-300"
+                      />
             </div>
             <h3 className="text-[20px] font-Outfit font-normal text-[#000000] mb-2">
               Manufacturing
@@ -355,14 +308,11 @@ const Services = () => {
           {/* Agriculture */}
           <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
             <div className="flex mb-2">
-              {agricultureLogo && (
-                <GatsbyImage
-                  image={agricultureLogo}
-                  alt="Agriculture Logo"
-                  className="hover:scale-110 transition-transform duration-300"
-                  imgStyle={{ transition: "transform 0.3s ease" }}
-                />
-              )}
+               <img
+                        src={Agri}
+                        alt="Agri"
+                        className="hover:scale-110 transition-transform duration-300"
+                      />
             </div>
             <h3 className="text-[20px] font-Outfit font-normal text-[#000000] mb-2">
               Agriculture
@@ -404,4 +354,4 @@ const Services = () => {
 
 export default Services;
 
-export const Head = () => <title>Home Page</title>;
+

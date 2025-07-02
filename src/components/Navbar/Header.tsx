@@ -1,7 +1,7 @@
 import { graphql, Link, useStaticQuery } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import React from "react";
-
+import frame from "../assets/Frame.svg";
 const Header = () => {
   const data = useStaticQuery(graphql`
     query {
@@ -10,7 +10,7 @@ const Header = () => {
           gatsbyImageData(placeholder: BLURRED)
         }
       }
-        logo2: file(relativePath: { eq: "logo2.png" }) {
+      logo2: file(relativePath: { eq: "logo2.png" }) {
         childImageSharp {
           gatsbyImageData(width: 40, height: 40, placeholder: TRACED_SVG)
         }
@@ -24,32 +24,31 @@ const Header = () => {
 
   return (
     <div>
-    
       {/* Header */}
-      <header className="h-[100px] bg-[#FFFFFF] flex items-center justify-between md:px-6 px-4 shadow-md border-b">
-        {/* Logo Section */}
-        <div className="flex items-center md:px-[137px] px-2 py-[1px] w-full md:w-auto justify-center md:justify-start">
-          {tlogo && <GatsbyImage image={tlogo} alt="Logo" />}
+      <header className="h-[80px] lg:h-[100px] bg-white flex items-center justify-between px-4 sm:px-6 md:px-10 lg:px-20 shadow-md border-b">
+        {/* Logo */}
+        <div className="flex items-center flex-shrink-0">
+          {tlogo && <GatsbyImage image={tlogo} alt="Logo"  />}
         </div>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex space-x-4 font-normal gap-[77px] font-Outfit text-[15px] text-[#4A4A4A]">
-          <Link to="/" className="hover:text-[#821AEA] hover:font-semibold transition-colors duration-200">Home</Link>
-          <Link to="/about" className="hover:text-[#821AEA] hover:font-semibold transition-colors duration-200">About Us</Link>
-          <Link to="/smallstartup" className="hover:text-[#821AEA] hover:font-semibold transition-colors duration-200">Services</Link>
-          <Link to="" className="hover:text-[#821AEA] hover:font-semibold transition-colors duration-200">Case Studies</Link>
-          <Link to="/contact" className="hover:text-[#821AEA] hover:font-semibold transition-colors duration-200">Referrals</Link>
+        {/* Desktop Nav (lg and above only) */}
+        <nav className="hidden lg:flex items-center gap-4 xl:gap-10 text-sm lg:text-[15px] font-Outfit text-[#4A4A4A]">
+          <Link to="/" className="hover:text-[#821AEA] hover:font-semibold transition">Home</Link>
+          <Link to="/about" className="hover:text-[#821AEA] hover:font-semibold transition">About Us</Link>
+          <Link to="/smallstartup" className="hover:text-[#821AEA] hover:font-semibold transition">Services</Link>
+          <Link to="" className="hover:text-[#821AEA] hover:font-semibold transition">Case Studies</Link>
+          <Link to="/contact" className="hover:text-[#821AEA] hover:font-semibold transition">Referrals</Link>
         </nav>
 
-        {/* Desktop Button */}
-        <div className="hidden md:flex items-center space-x-6">
-          <button className="bg-[#821AEA] text-[15px] text-[#FFFFFF] w-[118px] h-[42px] rounded-xl font-Outfit font-normal hover:text-text-light transition-colors duration-200">
+        {/* Desktop Button (lg and above only) */}
+        <div className="hidden lg:flex">
+          <button className="bg-[#821AEA] text-white text-sm lg:text-[15px] w-[90px] h-[35px] lg:w-[118px] lg:h-[42px] rounded-xl font-Outfit hover:opacity-90 transition">
             Contact Us
           </button>
         </div>
 
-        {/* Mobile Hamburger Icon */}
-        <div className="md:hidden">
+        {/* Mobile & Tablet Hamburger Icon (sm + md only) */}
+        <div className="lg:hidden">
           <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="focus:outline-none">
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
@@ -58,9 +57,9 @@ const Header = () => {
         </div>
       </header>
 
-      {/* Mobile Menu Dropdown */}
+      {/* Mobile & Tablet Dropdown */}
       {isMenuOpen && (
-        <div className="md:hidden flex flex-col items-center bg-white shadow-md border-b py-4 space-y-3 font-Outfit text-[15px] text-[#4A4A4A] transition-all duration-300">
+        <div className="lg:hidden flex flex-col items-center bg-white shadow-md border-b py-4 space-y-3 font-Outfit text-[15px] text-[#4A4A4A] transition-all duration-300">
           <Link to="/" className="hover:text-[#821AEA]" onClick={() => setIsMenuOpen(false)}>Home</Link>
           <Link to="/about" className="hover:text-[#821AEA]" onClick={() => setIsMenuOpen(false)}>About Us</Link>
           <Link to="/smallstartup" className="hover:text-[#821AEA]" onClick={() => setIsMenuOpen(false)}>Services</Link>
