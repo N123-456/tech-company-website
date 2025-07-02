@@ -117,7 +117,7 @@ const Freequote = () => {
             <div className="flex md:pl-[200px] justify-center">
               <button
                 type="submit"
-                className="w-[153px] h-[42px] text-[15px] md:text-[10px] bg-[#821AEA] text-white font-Outfit font-normal p-2 rounded-xl hover:bg-purple-700 transition duration-300"
+                className="w-[153px] h-[42px] lg:text-[15px] md:text-[10px] bg-[#821AEA] text-white font-Outfit font-normal p-2 rounded-xl hover:bg-purple-700 transition duration-300"
               >
                 Get a free quote
               </button>

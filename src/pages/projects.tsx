@@ -198,7 +198,7 @@ const Projects= () => {
 
             {/* Testimonial Paragraph */}
             <div className="w-full lg:w-[680px]">
-              <p className="font-Quicksand text-[#4A4A4A] text-[15px] font-medium border border-white">
+              <p className="font-Quicksand text-[#4A4A4A] text-[15px] font-medium border border-[#E5E5E5]">
          {testimonials[selectedIndex]?.feedback}
               </p>
             </div>
