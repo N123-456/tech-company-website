@@ -212,7 +212,7 @@ const Services = () => {
             <h3 className="text-[20px] font-Outfit font-normal text-[#000000] mb-2">
               Healthcare
             </h3>
-            <p className="text-[#4A4A4A] font-Quicksand text-[15px] font-normal">
+            <p className="text-[#4A4A4A] font-Quicksand text-[13px] font-normal">
               With the increasing demand for digital healthcare solutions, the
               healthcare industry needs software development services to develop
               custom solutions for electronic health records, patient management
@@ -235,7 +235,7 @@ const Services = () => {
             <h3 className="text-[20px] font-Outfit font-normal text-[#000000] mb-2">
               Education
             </h3>
-            <p className="text-[#4A4A4A] font-Quicksand text-[15px] font-normal">
+            <p className="text-[#4A4A4A] font-Quicksand text-[13px] font-normal">
               Education industry is rapidly adopting technology in teaching and
               learning processes. Custom software development solutions can help
               develop educational platforms, e-learning systems, online learning
@@ -255,7 +255,7 @@ const Services = () => {
             <h3 className="text-[20px] font-Outfit font-normal text-[#000000] mb-2">
               Retail
             </h3>
-            <p className="text-[#4A4A4A] font-Quicksand text-[15px] font-normal">
+            <p className="text-[#4A4A4A] font-Quicksand text-[13px] font-normal">
               The retail industry is rapidly shifting towards online shopping
               and e-commerce, requiring software solutions to manage inventory,
               track orders, process payments, and more. Custom software
@@ -276,7 +276,7 @@ const Services = () => {
             <h3 className="text-[20px] font-Outfit font-normal text-[#000000] mb-2">
               Logistics & Transportation
             </h3>
-            <p className="text-[#4A4A4A] font-Quicksand text-[15px] font-normal">
+            <p className="text-[#4A4A4A] font-Quicksand text-[13px] font-normal">
               The logistics and transportation industry requires software
               development services to develop custom solutions for supply chain
               management, fleet management, tracking and delivery systems, and
@@ -297,7 +297,7 @@ const Services = () => {
             <h3 className="text-[20px] font-Outfit font-normal text-[#000000] mb-2">
               Manufacturing
             </h3>
-            <p className="text-[#4A4A4A] font-Quicksand text-[15px] font-normal">
+            <p className="text-[#4A4A4A] font-Quicksand text-[13px] font-normal">
               The manufacturing industry requires software development services
               to develop custom solutions for inventory management, production
               planning, quality control, and more. Custom software solutions can
@@ -317,7 +317,7 @@ const Services = () => {
             <h3 className="text-[20px] font-Outfit font-normal text-[#000000] mb-2">
               Agriculture
             </h3>
-            <p className="text-[#4A4A4A] font-Quicksand text-[15px] font-normal">
+            <p className="text-[#4A4A4A] font-Quicksand text-[13px] font-normal">
               Agriculture industry required innovative infrastructure to disrupt
               old farming techniques which can skyrocket their business.
             </p>

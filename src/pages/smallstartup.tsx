@@ -132,7 +132,7 @@ const smallstartup = () => {
                   <h3 className="text-20 font-semibold font-Outfit text-[#000000] mb-2">
                     Maintenance & Support
                   </h3>
-                  <p className="text-[#4A4A4A] font-normal font-Quicksand text-[15px]">
+                  <p className="text-[#4A4A4A] font-normal font-Quicksand text-[13px]">
                     After the initial development, startups may need ongoing
                     maintenance and support services. A software development
                     company can provide bug fixing, updates, security patches,
@@ -155,7 +155,7 @@ const smallstartup = () => {
                   <h3 className="text-20 font-semibold font-Outfit text-[#000000] mb-2">
                     Quality Assurance & Testing
                   </h3>
-                  <p className="text-[#4A4A4A] font-normal font-Quicksand text-[15px]">
+                  <p className="text-[#4A4A4A] font-normal font-Quicksand text-[13px]">
                     Education industry is rapidly adopting technology in
                     teaching and learning processes. Custom software development
                     solutions can help develop educational platforms, e-learning
@@ -174,7 +174,7 @@ const smallstartup = () => {
                   <h3 className="text-20 font-semibold font-Outfit text-[#000000] mb-2">
                     Software Integration
                   </h3>
-                  <p className="text-[#4A4A4A] font-normal font-Quicksand text-[15px]">
+                  <p className="text-[#4A4A4A] font-normal font-Quicksand text-[13px]">
                     Startups often need to integrate their software with
                     third-party services or existing systems. A software
                     development company can help with API integrations, data
@@ -193,7 +193,7 @@ const smallstartup = () => {
                   <h3 className="text-20 font-semibold font-Outfit text-[#000000] mb-2">
                     Cloud Solutions & Infratstructure
                   </h3>
-                  <p className="text-[#4A4A4A] font-normal font-Quicksand text-[15px]">
+                  <p className="text-[#4A4A4A] font-normal font-Quicksand text-[13px]">
                     Software development companies can assist startups in
                     leveraging cloud computing platforms such as Amazon Web
                     Services (AWS), Microsoft Azure, or Google Cloud Platform
@@ -213,7 +213,7 @@ const smallstartup = () => {
                   <h3 className="text-20 font-semibold font-Outfit text-[#000000] mb-2">
                     Technology Consulting
                   </h3>
-                  <p className="text-[#4A4A4A] font-normal font-Quicksand text-[15px]">
+                  <p className="text-[#4A4A4A] font-normal font-Quicksand text-[13px]">
                     Startups may need guidance on technology choices and
                     strategies. Software development companies can offer
                     consulting services, helping startups choose the right
@@ -232,7 +232,7 @@ const smallstartup = () => {
                   <h3 className="text-20 font-semibold font-Outfit text-[#000000] mb-2">
                     UI/UX Design
                   </h3>
-                  <p className="text-[#4A4A4A] font-normal font-Quicksand text-[15px]">
+                  <p className="text-[#4A4A4A] font-normal font-Quicksand text-[13px]">
                     Creating a user-friendly and visually appealing interface is
                     crucial for startups to attract and retain customers.
                     Software development companies can provide UI/UX design
@@ -251,7 +251,7 @@ const smallstartup = () => {
                   <h3 className="text-20 font-semibold font-Outfit text-[#000000] mb-2">
                     Minimum Viable Product (MVP) Development
                   </h3>
-                  <p className="text-[#4A4A4A] font-normal font-Quicksand text-[15px]">
+                  <p className="text-[#4A4A4A] font-normal font-Quicksand text-[13px]">
                     Startups often need to quickly validate their ideas and
                     attract investors or early adopters. A software development
                     company can help build an MVP, which is a basic version of
@@ -270,7 +270,7 @@ const smallstartup = () => {
                   <h3 className="text-20 font-semibold font-Outfit text-[#000000] mb-2">
                     Custom Software Development
                   </h3>
-                  <p className="text-[#4A4A4A] font-normal font-Quicksand text-[15px]">
+                  <p className="text-[#4A4A4A] font-normal font-Quicksand text-[13px]">
                     Software development companies can build custom software
                     solutions tailored to the unique requirements of a startup.
                     This includes developing web applications, mobile apps, and
@@ -299,7 +299,7 @@ const smallstartup = () => {
                   <h3 className="text-20 font-semibold font-Outfit text-[#000000] mb-2">
                     Web Development
                   </h3>
-                  <p className="text-[#4A4A4A] font-normal font-Quicksand text-[15px]">
+                  <p className="text-[#4A4A4A] font-normal font-Quicksand text-[13px]">
                     Companies require an online presence to reach their target
                     audience. Software development companies can create
                     responsive and interactive websites for small to
@@ -318,7 +318,7 @@ const smallstartup = () => {
                   <h3 className="text-20 font-semibold font-Outfit text-[#000000] mb-2">
                     Mobile App Development
                   </h3>
-                  <p className="text-[#4A4A4A] font-normal font-Quicksand text-[15px]">
+                  <p className="text-[#4A4A4A] font-normal font-Quicksand text-[13px]">
                     With the increasing use of smartphones, having a mobile app
                     can be crucial for businesses. Software development
                     companies can develop mobile apps for iOS and Android
@@ -337,7 +337,7 @@ const smallstartup = () => {
                   <h3 className="text-20 font-semibold font-Outfit text-[#000000] mb-2">
                     E-commerce Solutions
                   </h3>
-                  <p className="text-[#4A4A4A] font-normal font-Quicksand text-[15px]">
+                  <p className="text-[#4A4A4A] font-normal font-Quicksand text-[13px]">
                     For businesses involved in online selling, software
                     development companies can create robust e-commerce platforms
                     with features like product catalogs, shopping carts, secure
@@ -355,7 +355,7 @@ const smallstartup = () => {
                   <h3 className="text-20 font-semibold font-Outfit text-[#000000] mb-2">
                     Legacy System Modernization
                   </h3>
-                  <p className="text-[#4A4A4A] font-normal font-Quicksand text-[15px]">
+                  <p className="text-[#4A4A4A] font-normal font-Quicksand text-[13px]">
                     Many small to medium-sized companies still rely on outdated
                     legacy systems. Software development companies can help
                     modernize and upgrade these systems, ensuring compatibility
@@ -379,7 +379,7 @@ const smallstartup = () => {
                   <h3 className="text-20 font-semibold font-Outfit text-[#000000] mb-2">
                     Legacy System Modernization
                   </h3>
-                  <p className="text-[#4A4A4A] font-normal font-Quicksand text-[15px]">
+                  <p className="text-[#4A4A4A] font-normal font-Quicksand text-[13px]">
                     Software development companies can assist in migrating
                     existing systems to the cloud or building cloud-native
                     applications. This allows companies to leverage the
@@ -398,7 +398,7 @@ const smallstartup = () => {
                   <h3 className="text-20 font-semibold font-Outfit text-[#000000] mb-2">
                     Data Analytics and Business Intelligence
                   </h3>
-                  <p className="text-[#4A4A4A] font-normal font-Quicksand text-[15px]">
+                  <p className="text-[#4A4A4A] font-normal font-Quicksand text-[13px]">
                     Companies generate vast amounts of data, and software
                     development companies can help extract insights from this
                     data through analytics and business intelligence solutions.
@@ -417,7 +417,7 @@ const smallstartup = () => {
                   <h3 className="text-20 font-semibold font-Outfit text-[#000000] mb-2">
                     Integration and API Development
                   </h3>
-                  <p className="text-[#4A4A4A] font-normal font-Quicksand text-[15px]">
+                  <p className="text-[#4A4A4A] font-normal font-Quicksand text-[13px]">
                     Small to medium-sized companies often use multiple software
                     systems that need to communicate with each other. Software
                     development companies can help integrate these systems by
@@ -441,7 +441,7 @@ const smallstartup = () => {
                   <h3 className="text-20 font-semibold font-Outfit text-[#000000] mb-2">
                     Custom Software Development
                   </h3>
-                  <p className="text-[#4A4A4A] font-normal font-Quicksand text-[15px]">
+                  <p className="text-[#4A4A4A] font-normal font-Quicksand text-[13px]">
                     Software development companies can build tailored software
                     solutions that address the specific needs and challenges of
                     small to medium-sized companies. This includes developing
@@ -459,7 +459,7 @@ const smallstartup = () => {
                   <h3 className="text-20 font-semibold font-Outfit text-[#000000] mb-2">
                     Maintenance and Support
                   </h3>
-                  <p className="text-[#4A4A4A] font-normal font-Quicksand text-[15px]">
+                  <p className="text-[#4A4A4A] font-normal font-Quicksand text-[13px]">
                     Software development companies can provide ongoing
                     maintenance and support services to small to medium-sized
                     companies. This includes bug fixing, updates, security
@@ -477,7 +477,7 @@ const smallstartup = () => {
                   <h3 className="text-20 font-semibold font-Outfit text-[#000000] mb-2">
                     IT Consulting
                   </h3>
-                  <p className="text-[#4A4A4A] font-normal font-Quicksand text-[15px]">
+                  <p className="text-[#4A4A4A] font-normal font-Quicksand text-[13px]">
                     Software development companies can provide ongoing
                     maintenance and support services to small to medium-sized
                     companies. This includes bug fixing, updates, security
