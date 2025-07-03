@@ -158,7 +158,7 @@ const Projects= () => {
                 <div
                   key={t.id}
                    onClick={() => setSelectedIndex(index)}
-                  className={`cursor-pointer bg-white w-full rounded-lg shadow-md p-4 border-2 border-purple-300 transform hover:scale-105 transition duration-300 ease-in-out animate-fadeIn flex items-start ${
+                  className={`cursor-pointer bg-white w-full md:w-[500px] rounded-lg shadow-md p-4 border-2 border-purple-300 transform hover:scale-105 transition duration-300 ease-in-out animate-fadeIn flex items-start ${
                 index === selectedIndex
                 ? "bg-purple-100 border-purple-400"
                 : "bg-white border-gray-300"
