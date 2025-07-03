@@ -141,14 +141,17 @@ const Freequote = () => {
           </p>
 
           <div className="flex flex-col md:flex-row justify-center items-center mb-4 space-y-4  md:space-y-0 md:space-x-4">
-            <input
-              type="email"
-              placeholder="Subscribe to our newsletter"
-              className="p-2 border rounded-lg w-full md:w-[494px] h-[60px] focus:outline-none focus:ring-2 focus:ring-purple-500"
-            />
-            <button className="bg-[#821AEA] text-white p-2 rounded-lg w-full md:w-[109px] h-[42px] hover:bg-purple-600 transition duration-300">
-              Subscribe
-            </button>
+           <div className="relative w-full md:w-[494px]">
+    <input
+      type="email"
+      placeholder="Subscribe to our newsletter"
+      className="p-4 pr-[120px] border rounded-lg w-full h-[60px] focus:outline-none focus:ring-2 focus:ring-purple-500"
+    />
+    <button
+      className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-[#821AEA] text-white px-4 py-2 rounded-lg h-[42px] hover:bg-purple-600 transition duration-300"
+    >
+      Subscribe
+    </button></div>
           </div>
 
           <div className="flex justify-center space-x-4 mb-4">
