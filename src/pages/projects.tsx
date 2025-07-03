@@ -188,7 +188,7 @@ const Projects= () => {
                 className="absolute top-2 right-2 text-purple-600 text-sm hover:text-red-700"
                 title="Delete testimonial"
               >
-                🗑
+                ❌
               </button>
                     </div>
                   </div>
