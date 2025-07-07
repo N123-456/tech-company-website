@@ -489,12 +489,12 @@ const smallstartup = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col items-center pt-10 px-4">
-          <footer className="bg-gray-100 rounded-lg p-4 text-center max-w-[1301px] shadow-lg">
+        <div className=" pt-10 w-[100%] ">
+          <footer className="bg-gray-100 rounded-lg p-4 text-center shadow-lg">
             <div className="flex justify-center items-center mb-4">
               <div>
                 {logo2 && (
-                  <GatsbyImage image={logo2} alt="Logo" className="h-[70px]" />
+                  <GatsbyImage image={logo2} alt="Logo"  />
                 )}
               </div>
             </div>
@@ -562,7 +562,7 @@ const smallstartup = () => {
 
             <div className="border-b border-bg-[#E5E5E5] "></div>
             <p className="text-[#4A4A4A] text-[15px] font-Outfit font-normal pt-5">
-              © 2023 Col'n Rows. All Rights Reserved.
+              © {new Date().getFullYear()} Col'n Rows. All Rights Reserved.
             </p>
           </footer>
         </div>

@@ -158,7 +158,7 @@ const Services = () => {
           <div className="flex md:flex-col sm:flex-col lg:flex-row md-only:flex-col xs:flex-col xs-sm:flex-col justify-around items-center py-6 animate-fade-in md:space-y-4 space-y-6">
             <div className="w-[434px] h-[234px] xs-m:w-[200px] border border-[#CCCCCC] hover:bg-purple-200 hover:shadow-md transition-all duration-300 animate-slide-up animate-delay-200">
             <div className="text-center  ">
-              <img src={Startup} alt="Maintenance Icon" className="mx-auto mb-4"/>
+              <img src={Startup} alt="Maintenance Icon" className="mx-auto mb-4 pt-2"/>
               
               <h3 className="text-[20px] font-Outfit font-medium text-[#000000] mb-8">
                 Startups

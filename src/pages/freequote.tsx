@@ -4,7 +4,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import React, { useRef } from "react";
 import emailjs from "emailjs-com";
 
-const Freequote = () => {
+const Freequote = ({ quoteRef }) => {
   const data = useStaticQuery(graphql`
     query {
       signin: file(relativePath: { eq: "signin.png" }) {
@@ -73,6 +73,7 @@ const Freequote = () => {
   };
 
   return (
+    <div>
     <div className="min-h-screen flex flex-col items-center justify-start bg-white px-4 sm:px-6 lg:px-8">
       <h2 className="text-[32px] font-medium font-Outfit text-[#000000] text-center mb-4 pt-4">
         Get a free quote
@@ -89,32 +90,36 @@ const Freequote = () => {
           )}
         </div>
 
-        <div className="w-full h-auto md:h-[400px]  md:w-1/2 p-6 bg-white transform transition duration-300 hover:shadow-xl">
+        <div id="quote" ref={quoteRef} className="w-full h-auto md:h-[400px]  md:w-1/2 p-6 bg-white transform transition duration-300">
           <form ref={form} onSubmit={sendEmail} className="space-y-4">
             <input
               type="text"
               name="name"
               placeholder="Name"
               className="w-full p-2 border rounded"
+              required
             />
             <input
               type="email"
               name="email"
               placeholder="Email"
               className="w-full p-2 border rounded"
+              required
             />
             <input
               type="text"
               name="title"
               placeholder="Subject"
               className="w-full p-2 border rounded"
+              required
             />
             <textarea
               name="message"
               placeholder="Your message"
               className="w-full p-2 border rounded h-24"
+              required
             />
-            <div className="flex md:pl-[200px] justify-center">
+            <div className="flex md:pl-[240px] justify-end">
               <button
                 type="submit"
                 className="w-[153px] h-[42px] lg:text-[15px] md:text-[10px] bg-[#821AEA] text-white font-Outfit font-normal p-2 rounded-xl hover:bg-purple-700 transition duration-300"
@@ -125,12 +130,14 @@ const Freequote = () => {
           </form>
         </div>
       </div>
-      <div className="pt-10">
-        <footer className="bg-gray-100 rounded-lg p-4 text-center w-full max-w-[1301px] shadow-lg">
+      
+      </div>
+      <div className="pt-10 w-[100%]">
+        <footer className="bg-gray-100 rounded-lg p-4 text-center  shadow-lg">
           <div className="flex justify-center items-center mb-4">
             <div>
               {logo2 && (
-                <GatsbyImage image={logo2} alt="Logo" className="h-[70px]" />
+                <GatsbyImage image={logo2} alt="Logo"  />
               )}
             </div>
           </div>
@@ -146,6 +153,7 @@ const Freequote = () => {
       type="email"
       placeholder="Subscribe to our newsletter"
       className="p-4 pr-[120px] border rounded-lg w-full h-[60px] focus:outline-none focus:ring-2 focus:ring-purple-500"
+    
     />
     <button
       className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-[#821AEA] text-white px-4 py-2 rounded-lg h-[42px] hover:bg-purple-600 transition duration-300"
@@ -198,7 +206,7 @@ const Freequote = () => {
 
           <div className="border-b border-bg-[#E5E5E5] "></div>
           <p className="text-[#4A4A4A] text-[15px] font-Outfit font-normal pt-5">
-            © 2023 Col'n Rows. All Rights Reserved.
+             © {new Date().getFullYear()} Col'n Rows. All Rights Reserved
           </p>
         </footer>
       </div>

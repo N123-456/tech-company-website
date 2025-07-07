@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useEffect ,useRef} from "react";
 import { AppLayout } from "../components/AppLayout/AppLayout";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { graphql, useStaticQuery } from "gatsby";
@@ -7,6 +8,18 @@ import Projects from "./projects";
 import Freequote from "./freequote";
 
 const IndexPage = () => {
+const quoteRef = useRef(null);
+
+useEffect(() => {
+  if (typeof window !== "undefined" && window.location.hash === "#quote") {
+    setTimeout(() => {
+      if (quoteRef.current) {
+        quoteRef.current.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 500); // enough time for Freequote to mount
+  }
+}, []);
+
 
   const data = useStaticQuery(graphql`
     query {
@@ -174,7 +187,7 @@ const IndexPage = () => {
         </div>
         <Services />
         <Projects />
-        <Freequote/>
+        <Freequote quoteRef={quoteRef}/>
       </main>
     </AppLayout>
   );

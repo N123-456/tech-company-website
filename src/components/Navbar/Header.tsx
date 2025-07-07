@@ -1,4 +1,4 @@
-import { graphql, Link, useStaticQuery } from "gatsby";
+import { graphql, Link, navigate, useStaticQuery } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import React from "react";
 import frame from "../assets/Frame.svg";
@@ -22,6 +22,19 @@ const Header = () => {
   const logo2 = getImage(data.logo2);
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
+  const handleScrollToQuote = () => {
+    setIsMenuOpen(false); // Close the mobile menu
+    if (typeof window !== "undefined") {
+      const quoteElement = document.getElementById("quote");
+      if (quoteElement) {
+        quoteElement.scrollIntoView({ behavior: "smooth" });
+      } else {
+        // Navigate to the homepage with #quote hash
+        navigate("/#quote");
+      }
+    }
+  };
+
   return (
     <div>
       {/* Header */}
@@ -42,7 +55,10 @@ const Header = () => {
 
         {/* Desktop Button (lg and above only) */}
         <div className="hidden lg:flex">
-          <button className="bg-[#821AEA] text-white text-sm lg:text-[15px] w-[90px] h-[35px] lg:w-[118px] lg:h-[42px] rounded-xl font-Outfit hover:opacity-90 transition">
+         <button
+            onClick={handleScrollToQuote}
+            className="bg-[#821AEA] text-white text-sm lg:text-[15px] w-[90px] h-[35px] lg:w-[118px] lg:h-[42px] rounded-xl font-Outfit hover:opacity-90 transition"
+          >
             Contact Us
           </button>
         </div>
@@ -65,7 +81,12 @@ const Header = () => {
           <Link to="/smallstartup" className="hover:text-[#821AEA]" onClick={() => setIsMenuOpen(false)}>Services</Link>
           <Link to="" className="hover:text-[#821AEA]" onClick={() => setIsMenuOpen(false)}>Case Studies</Link>
           <Link to="/contact" className="hover:text-[#821AEA]" onClick={() => setIsMenuOpen(false)}>Referrals</Link>
-          <button className="mt-2 bg-[#821AEA] text-white w-[118px] h-[42px] rounded-xl">Contact Us</button>
+         <button
+            onClick={handleScrollToQuote}
+            className="mt-2 bg-[#821AEA] text-white w-[110px] h-[42px] rounded-xl font-Outfit hover:opacity-90 transition"
+          >
+            Contact Us
+          </button>
         </div>
       )}
     </div>
