@@ -45,9 +45,14 @@ const smallstartup = () => {
           gatsbyImageData(placeholder: BLURRED)
         }
       }
+         tlogo: file(relativePath: { eq: "tlogo.png" }) {
+        childImageSharp {
+          gatsbyImageData(placeholder: BLURRED)
+        }
+      }
     }
   `);
-
+ const tlogo = getImage(data.tlogo);
   const logo2 = getImage(data.logo2);
   const whatsapp = getImage(data.whatsapp);
   const instagram = getImage(data.instagram);
@@ -493,8 +498,8 @@ const smallstartup = () => {
           <footer className="bg-gray-100 rounded-lg p-4 text-center shadow-lg">
             <div className="flex justify-center items-center mb-4">
               <div>
-                {logo2 && (
-                  <GatsbyImage image={logo2} alt="Logo"  />
+                {tlogo && (
+                  <GatsbyImage image={tlogo} alt="Logo"  />
                 )}
               </div>
             </div>
