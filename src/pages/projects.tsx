@@ -6,6 +6,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { AppLayout } from "../components/AppLayout/AppLayout";
 import Project from "../assets/PROJECT.svg";
 import Project2 from "../assets/PROJECT2.svg";
+
 import { db } from "../firebase"; // 🔥 import Firestore
 import { collection, getDocs, deleteDoc, doc, query, orderBy } from "firebase/firestore";
 const Projects= () => {
@@ -170,7 +171,7 @@ const handleDelete = async (indexToDelete: number) => {
                       <GatsbyImage
                         image={testimonal}
                         alt="Testimonial"
-                        className="bg-white"
+                        className="bg-white w-[40px] h-[40px]"
                       />
                     )}
                   </div>

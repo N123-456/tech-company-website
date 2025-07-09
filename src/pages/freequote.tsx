@@ -19,7 +19,7 @@ const Freequote = ({ quoteRef }) => {
           gatsbyImageData(placeholder: BLURRED)
         }
       }
-        tlogo: file(relativePath: { eq: "tlogo.png" }) {
+      tlogo: file(relativePath: { eq: "tlogo.png" }) {
         childImageSharp {
           gatsbyImageData(placeholder: BLURRED)
         }
@@ -49,7 +49,6 @@ const Freequote = ({ quoteRef }) => {
   const facebook = getImage(data.facebook);
   const form = useRef<HTMLFormElement | null>(null); // ✅ Correct
 
-
   const sendEmail = async (e) => {
     e.preventDefault();
 
@@ -58,7 +57,6 @@ const Freequote = ({ quoteRef }) => {
     const name = formData.get("name") as string;
     const title = formData.get("title") as string;
     const message = formData.get("message") as string;
-
 
     try {
       // EmailJS send
@@ -87,84 +85,91 @@ const Freequote = ({ quoteRef }) => {
 
   return (
     <div>
-    <div className="min-h-screen flex flex-col items-center justify-start bg-white px-4 sm:px-6 lg:px-8">
-      <h2 className="text-[32px] font-medium font-Outfit text-[#000000] text-center mb-4 pt-4">
-        Get a free quote
-      </h2>
+      <div className="min-h-screen flex flex-col items-center justify-start bg-white px-4 sm:px-6 lg:px-8">
+        <h2 className="text-[32px] font-medium font-Outfit text-[#000000] text-center mb-4 pt-4">
+          Get a free quote
+        </h2>
 
-      <div className="flex flex-col md:flex-row items-center justify-center max-w-full md:w-[1141px] md:h-[519px] bg-white p-4 pt-10 md:space-x-10 space-y-6 md:space-y-0">
-        <div className="md:h-[400px] lg:h-auto md:w-1/2 p-6">
-          {signin && (
-            <GatsbyImage
-              image={signin}
-              alt="Companies illustration"
-              className="mx-auto mb-4 rounded-xl transform transition duration-300 hover:scale-105"
-            />
-          )}
+        <div className="flex flex-col md:flex-row items-center justify-center max-w-full md:w-[1141px] md:h-[519px] bg-white p-4 pt-10 md:space-x-10 space-y-6 md:space-y-0">
+          <div className="md:h-[400px] lg:h-auto md:w-1/2 p-6">
+            {signin && (
+              <GatsbyImage
+                image={signin}
+                alt="Companies illustration"
+                className="mx-auto mb-4 rounded-xl transform transition duration-300 hover:scale-105"
+              />
+            )}
+          </div>
+
+          <div
+            id="quote"
+            ref={quoteRef}
+            className="w-full h-auto md:h-[400px] md:w-1/2 p-6 bg-white transform transition duration-300"
+          >
+            <form ref={form} onSubmit={sendEmail} className="space-y-4">
+              <div className="relative">
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Name"
+                  className="w-full p-2 border rounded"
+                  required
+                />
+                <span className="absolute right-2 top-1/2 transform -translate-y-1/2 text-red-500 leading-none">
+                  *
+                </span>
+              </div>
+              <div className="relative">
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Email"
+                  className="w-full p-2 border rounded"
+                  required
+                />
+                <span className="absolute right-2 top-1/2 transform -translate-y-1/2 text-red-500 leading-none">
+                  *
+                </span>
+              </div>
+              <div className="relative">
+                <input
+                  type="text"
+                  name="title"
+                  placeholder="Subject"
+                  className="w-full p-2 border rounded"
+                  required
+                />
+                <span className="absolute right-2 top-1/2 transform -translate-y-1/2 text-red-500 leading-none">
+                  *
+                </span>
+              </div>
+              <div className="relative">
+                <textarea
+                  name="message"
+                  placeholder="Your message"
+                  className="w-full p-2 border rounded h-24"
+                  required
+                />
+                <span className="absolute right-2 top-2 text-red-500 leading-none">
+                  *
+                </span>
+              </div>
+              <div className="flex md:pl-[240px] justify-end">
+                <button
+                  type="submit" // Changed from submit to button to avoid form submission issues
+                  className="w-[153px] h-[42px] lg:text-[15px] md:text-[10px] bg-[#821AEA] text-white font-Outfit font-normal p-2 rounded-xl hover:bg-purple-700 transition duration-300"
+                >
+                  Get a free quote
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
-
-       <div id="quote" ref={quoteRef} className="w-full h-auto md:h-[400px] md:w-1/2 p-6 bg-white transform transition duration-300">
-  <form ref={form} onSubmit={sendEmail} className="space-y-4">
-    <div className="relative">
-      <input
-        type="text"
-        name="name"
-        placeholder="Name"
-        className="w-full p-2 border rounded"
-        required
-      />
-      <span className="absolute right-2 top-1/2 transform -translate-y-1/2 text-red-500">*</span>
-    </div>
-    <div className="relative">
-      <input
-        type="email"
-        name="email"
-        placeholder="Email"
-        className="w-full p-2 border rounded"
-        required
-      />
-      <span className="absolute right-2 top-1/2 transform -translate-y-1/2 text-red-500">*</span>
-    </div>
-    <div className="relative">
-      <input
-        type="text"
-        name="title"
-        placeholder="Subject"
-        className="w-full p-2 border rounded"
-        required
-      />
-      <span className="absolute right-2 top-1/2 transform -translate-y-1/2 text-red-500">*</span>
-    </div>
-    <div className="relative">
-      <textarea
-        name="message"
-        placeholder="Your message"
-        className="w-full p-2 border rounded h-24"
-        required
-      />
-      <span className="absolute right-2 top-2 text-red-500">*</span>
-    </div>
-    <div className="flex md:pl-[240px] justify-end">
-      <button
-        type="submit" // Changed from submit to button to avoid form submission issues
-        className="w-[153px] h-[42px] lg:text-[15px] md:text-[10px] bg-[#821AEA] text-white font-Outfit font-normal p-2 rounded-xl hover:bg-purple-700 transition duration-300"
-      >
-        Get a free quote
-      </button>
-    </div>
-  </form>
-</div>
-      </div>
-      
       </div>
       <div className="pt-10 w-[100%]">
         <footer className="bg-gray-100 rounded-lg p-4 text-center  shadow-lg">
           <div className="flex justify-center items-center mb-4">
-            <div>
-              {tlogo && (
-                <GatsbyImage image={tlogo} alt="Logo"  />
-              )}
-            </div>
+            <div>{tlogo && <GatsbyImage image={tlogo} alt="Logo" />}</div>
           </div>
 
           <p className="text-[#4A4A4A] text-[15px] font-Outfit font-normal mb-4">
@@ -173,18 +178,16 @@ const Freequote = ({ quoteRef }) => {
           </p>
 
           <div className="flex flex-col md:flex-row justify-center items-center mb-4 space-y-4  md:space-y-0 md:space-x-4">
-           <div className="relative w-full md:w-[494px]">
-    <input
-      type="email"
-      placeholder="Subscribe to our newsletter"
-      className="p-4 pr-[120px] border rounded-lg w-full h-[60px] focus:outline-none focus:ring-2 focus:ring-purple-500"
-    
-    />
-    <button
-      className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-[#821AEA] text-white px-4 py-2 rounded-lg h-[42px] hover:bg-purple-600 transition duration-300"
-    >
-      Subscribe
-    </button></div>
+            <div className="relative w-full md:w-[494px]">
+              <input
+                type="email"
+                placeholder="Subscribe to our newsletter"
+                className="p-4 pr-[120px] border rounded-lg w-full h-[60px] focus:outline-none focus:ring-2 focus:ring-purple-500"
+              />
+              <button className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-[#821AEA] text-white px-4 py-2 rounded-lg h-[42px] hover:bg-purple-600 transition duration-300">
+                Subscribe
+              </button>
+            </div>
           </div>
 
           <div className="flex justify-center space-x-4 mb-4">
@@ -231,7 +234,7 @@ const Freequote = ({ quoteRef }) => {
 
           <div className="border-b border-bg-[#E5E5E5] "></div>
           <p className="text-[#4A4A4A] text-[15px] font-Outfit font-normal pt-5">
-             © {new Date().getFullYear()} Col'n Rows. All Rights Reserved
+            © {new Date().getFullYear()} Col'n Rows. All Rights Reserved
           </p>
         </footer>
       </div>
