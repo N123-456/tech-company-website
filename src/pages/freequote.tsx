@@ -101,69 +101,69 @@ const Freequote = ({ quoteRef }) => {
             )}
           </div>
 
-          <div
-            id="quote"
-            ref={quoteRef}
-            className="w-full h-auto md:h-[400px] md:w-1/2 p-6 bg-white transform transition duration-300"
-          >
-            <form ref={form} onSubmit={sendEmail} className="space-y-4">
-              <div className="relative">
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Name"
-                  className="w-full p-2 border rounded"
-                  required
-                />
-                <span className="absolute right-2 top-1/2 transform -translate-y-1/2 text-red-500 leading-none">
-                  *
-                </span>
-              </div>
-              <div className="relative">
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Email"
-                  className="w-full p-2 border rounded"
-                  required
-                />
-                <span className="absolute right-2 top-1/2 transform -translate-y-1/2 text-red-500 leading-none">
-                  *
-                </span>
-              </div>
-              <div className="relative">
-                <input
-                  type="text"
-                  name="title"
-                  placeholder="Subject"
-                  className="w-full p-2 border rounded"
-                  required
-                />
-                <span className="absolute right-2 top-1/2 transform -translate-y-1/2 text-red-500 leading-none">
-                  *
-                </span>
-              </div>
-              <div className="relative">
-                <textarea
-                  name="message"
-                  placeholder="Your message"
-                  className="w-full p-2 border rounded h-24"
-                  required
-                />
-                <span className="absolute right-2 top-2 text-red-500 leading-none">
-                  *
-                </span>
-              </div>
-              <div className="flex md:pl-[240px] justify-end">
-                <button
-                  type="submit" // Changed from submit to button to avoid form submission issues
-                  className="w-[153px] h-[42px] lg:text-[15px] md:text-[10px] bg-[#821AEA] text-white font-Outfit font-normal p-2 rounded-xl hover:bg-purple-700 transition duration-300"
-                >
-                  Get a free quote
-                </button>
-              </div>
-            </form>
-          </div>
+       <div
+  id="quote"
+  ref={quoteRef}
+  className="w-full h-auto md:h-[400px] md:w-1/2 p-6 bg-white transform transition duration-300"
+>
+  <form ref={form} onSubmit={sendEmail} className="space-y-4">
+    <div className="relative">
+      <input
+        type="text"
+        name="name"
+        placeholder="Name"
+        className="w-full p-2 border rounded pr-8" // Added padding-right to accommodate asterisk
+        required
+      />
+      <span className="absolute right-2 top-1/2 transform -translate-y-1/2 text-red-500 leading-none z-10 sm:right-3">
+        *
+      </span>
+    </div>
+    <div className="relative">
+      <input
+        type="email"
+        name="email"
+        placeholder="Email"
+        className="w-full p-2 border rounded pr-8"
+        required
+      />
+      <span className="absolute right-2 top-1/2 transform -translate-y-1/2 text-red-500 leading-none z-10 sm:right-3">
+        *
+      </span>
+    </div>
+    <div className="relative">
+      <input
+        type="text"
+        name="title"
+        placeholder="Subject"
+        className="w-full p-2 border rounded pr-8"
+        required
+      />
+      <span className="absolute right-2 top-1/2 transform -translate-y-1/2 text-red-500 leading-none z-10 sm:right-3">
+        *
+      </span>
+    </div>
+    <div className="relative">
+      <textarea
+        name="message"
+        placeholder="Your message"
+        className="w-full p-2 border rounded h-24 pr-8"
+        required
+      />
+      <span className="absolute right-2 top-4 text-red-500 leading-none z-10 sm:right-3">
+        *
+      </span>
+    </div>
+    <div className="flex md:pl-[240px] justify-end">
+      <button
+        type="submit"
+        className="w-[153px] h-[42px] lg:text-[15px] md:text-[10px] bg-[#821AEA] text-white font-Outfit font-normal p-2 rounded-xl hover:bg-purple-700 transition duration-300"
+      >
+        Get a free quote
+      </button>
+    </div>
+  </form>
+</div>
         </div>
       </div>
       <div className="pt-10 w-[100%]">
