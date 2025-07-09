@@ -17,7 +17,7 @@ const Projects= () => {
           gatsbyImageData(placeholder: BLURRED)
         }
       }
-      testimonal: file(relativePath: { eq: "testimonal.png" }) {
+      testmonal: file(relativePath: { eq: "testmonal.png" }) {
         childImageSharp {
           gatsbyImageData(placeholder: BLURRED)
         }
@@ -26,7 +26,7 @@ const Projects= () => {
   `);
 
  
-  const testimonal = getImage(data.testimonal);
+  const testmonal = getImage(data.testmonal);
 
   const projects = [
     {
@@ -167,9 +167,9 @@ const handleDelete = async (indexToDelete: number) => {
             }`}
                 >
                   <div className="mr-4">
-                    {testimonal && (
+                    {testmonal && (
                       <GatsbyImage
-                        image={testimonal}
+                        image={testmonal}
                         alt="Testimonial"
                         className="bg-white w-[40px] h-[40px]"
                       />
