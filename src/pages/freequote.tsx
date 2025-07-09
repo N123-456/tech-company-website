@@ -3,6 +3,8 @@ import { graphql, useStaticQuery } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import React, { useRef } from "react";
 import emailjs from "emailjs-com";
+import { db } from "../firebase";
+import { collection, addDoc, getDocs } from "firebase/firestore";
 
 const Freequote = ({ quoteRef }) => {
   const data = useStaticQuery(graphql`
@@ -45,9 +47,10 @@ const Freequote = ({ quoteRef }) => {
   const whatsapp = getImage(data.whatsapp);
   const instagram = getImage(data.instagram);
   const facebook = getImage(data.facebook);
-  const form = useRef(null);
+  const form = useRef<HTMLFormElement | null>(null); // ✅ Correct
 
-  const sendEmail = (e) => {
+
+  const sendEmail = async (e) => {
     e.preventDefault();
 
     if (!form.current) return;
@@ -56,25 +59,30 @@ const Freequote = ({ quoteRef }) => {
     const title = formData.get("title") as string;
     const message = formData.get("message") as string;
 
-    emailjs
-      .sendForm(
+
+    try {
+      // EmailJS send
+      await emailjs.sendForm(
         "service_fpm1r1l",
         "template_hzev9nv",
         form.current,
         "BkqwK6VYhap8ZVCuT"
-      )
-      .then(() => {
-        alert("Message sent successfully!");
-        const existing = JSON.parse(
-          localStorage.getItem("testimonials") || "[]"
-        );
-        const newTestimonial = { name, title, feedback: message };
-        localStorage.setItem(
-          "testimonials",
-          JSON.stringify([...existing, newTestimonial])
-        );
-      })
-      .catch(() => alert("Failed to send"));
+      );
+
+      // ✅ Save testimonial to Firestore
+      await addDoc(collection(db, "testimonials"), {
+        name,
+        title,
+        feedback: message,
+        timestamp: new Date(),
+      });
+
+      alert("Message sent successfully!");
+      form.current.reset();
+    } catch (error) {
+      alert("Failed to send message.");
+      console.error("Error sending:", error);
+    }
   };
 
   return (
@@ -95,45 +103,57 @@ const Freequote = ({ quoteRef }) => {
           )}
         </div>
 
-        <div id="quote" ref={quoteRef} className="w-full h-auto md:h-[400px]  md:w-1/2 p-6 bg-white transform transition duration-300">
-          <form ref={form} onSubmit={sendEmail} className="space-y-4">
-            <input
-              type="text"
-              name="name"
-              placeholder="Name"
-              className="w-full p-2 border rounded"
-              required
-            />
-            <input
-              type="email"
-              name="email"
-              placeholder="Email"
-              className="w-full p-2 border rounded"
-              required
-            />
-            <input
-              type="text"
-              name="title"
-              placeholder="Subject"
-              className="w-full p-2 border rounded"
-              required
-            />
-            <textarea
-              name="message"
-              placeholder="Your message"
-              className="w-full p-2 border rounded h-24"
-              required
-            />
-            <div className="flex md:pl-[240px] justify-end">
-              <button
-                type="submit"
-                className="w-[153px] h-[42px] lg:text-[15px] md:text-[10px] bg-[#821AEA] text-white font-Outfit font-normal p-2 rounded-xl hover:bg-purple-700 transition duration-300"
-              >
-                Get a free quote
-              </button>
-            </div>
-          </form>
-        </div>
+       <div id="quote" ref={quoteRef} className="w-full h-auto md:h-[400px] md:w-1/2 p-6 bg-white transform transition duration-300">
+  <form ref={form} onSubmit={sendEmail} className="space-y-4">
+    <div className="relative">
+      <input
+        type="text"
+        name="name"
+        placeholder="Name"
+        className="w-full p-2 border rounded"
+        required
+      />
+      <span className="absolute right-2 top-1/2 transform -translate-y-1/2 text-red-500">*</span>
+    </div>
+    <div className="relative">
+      <input
+        type="email"
+        name="email"
+        placeholder="Email"
+        className="w-full p-2 border rounded"
+        required
+      />
+      <span className="absolute right-2 top-1/2 transform -translate-y-1/2 text-red-500">*</span>
+    </div>
+    <div className="relative">
+      <input
+        type="text"
+        name="title"
+        placeholder="Subject"
+        className="w-full p-2 border rounded"
+        required
+      />
+      <span className="absolute right-2 top-1/2 transform -translate-y-1/2 text-red-500">*</span>
+    </div>
+    <div className="relative">
+      <textarea
+        name="message"
+        placeholder="Your message"
+        className="w-full p-2 border rounded h-24"
+        required
+      />
+      <span className="absolute right-2 top-2 text-red-500">*</span>
+    </div>
+    <div className="flex md:pl-[240px] justify-end">
+      <button
+        type="submit" // Changed from submit to button to avoid form submission issues
+        className="w-[153px] h-[42px] lg:text-[15px] md:text-[10px] bg-[#821AEA] text-white font-Outfit font-normal p-2 rounded-xl hover:bg-purple-700 transition duration-300"
+      >
+        Get a free quote
+      </button>
+    </div>
+  </form>
+</div>
       </div>
       
       </div>

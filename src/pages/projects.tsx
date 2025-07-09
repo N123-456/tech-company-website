@@ -6,6 +6,8 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { AppLayout } from "../components/AppLayout/AppLayout";
 import Project from "../assets/PROJECT.svg";
 import Project2 from "../assets/PROJECT2.svg";
+import { db } from "../firebase"; // 🔥 import Firestore
+import { collection, getDocs, deleteDoc, doc, query, orderBy } from "firebase/firestore";
 const Projects= () => {
   const data = useStaticQuery(graphql`
     query {
@@ -42,43 +44,42 @@ const Projects= () => {
     },
   ];
 
-  
- const [testimonials, setTestimonials] = useState<any[]>([]);
-  const [selectedIndex, setSelectedIndex] = useState(0);
 
-    const loadTestimonials = () => {
-    const stored = JSON.parse(localStorage.getItem("testimonials") || "[]");
-    setTestimonials(stored);
+const [testimonials, setTestimonials] = useState<any[]>([]);
+const [selectedIndex, setSelectedIndex] = useState(0);
+
+useEffect(() => {
+  const fetchTestimonials = async () => {
+    try {
+      const q = query(collection(db, "testimonials"), orderBy("timestamp", "desc"));
+      const snapshot = await getDocs(q);
+      const items = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+      setTestimonials(items);
+    } catch (error) {
+      console.error("Error fetching testimonials:", error);
+    }
   };
+  fetchTestimonials();
+}, []);
 
-  useEffect(() => {
-    loadTestimonials();
+const handleDelete = async (indexToDelete: number) => {
+  try {
+    const docId = testimonials[indexToDelete].id;
+    await deleteDoc(doc(db, "testimonials", docId));
 
-    // Listen to storage changes
-    const onStorageChange = () => {
-      loadTestimonials();
-    };
-
-    window.addEventListener("storage", onStorageChange);
-
-    // Cleanup
-    return () => {
-      window.removeEventListener("storage", onStorageChange);
-    };
-  }, []);
-
-    const handleDelete = (indexToDelete: number) => {
     const updated = testimonials.filter((_, i) => i !== indexToDelete);
     setTestimonials(updated);
-    localStorage.setItem("testimonials", JSON.stringify(updated));
 
-    // Reset selected index
     if (indexToDelete === selectedIndex) {
       setSelectedIndex(0);
     } else if (indexToDelete < selectedIndex) {
       setSelectedIndex((prev) => Math.max(prev - 1, 0));
     }
-  };
+  } catch (error) {
+    console.error("Failed to delete testimonial:", error);
+  }
+};
+
   
   return (
     <div className="min-h-screen bg-white py-10 px-4 sm:px-6 lg:px-8">
