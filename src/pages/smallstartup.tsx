@@ -45,14 +45,14 @@ const smallstartup = () => {
           gatsbyImageData(placeholder: BLURRED)
         }
       }
-         tlogo: file(relativePath: { eq: "tlogo.png" }) {
+      tlogo: file(relativePath: { eq: "tlogo.png" }) {
         childImageSharp {
           gatsbyImageData(placeholder: BLURRED)
         }
       }
     }
   `);
- const tlogo = getImage(data.tlogo);
+  const tlogo = getImage(data.tlogo);
   const logo2 = getImage(data.logo2);
   const whatsapp = getImage(data.whatsapp);
   const instagram = getImage(data.instagram);
@@ -497,11 +497,7 @@ const smallstartup = () => {
         <div className=" pt-10 w-[100%] ">
           <footer className="bg-gray-100 rounded-lg p-4 text-center shadow-lg">
             <div className="flex justify-center items-center mb-4">
-              <div>
-                {tlogo && (
-                  <GatsbyImage image={tlogo} alt="Logo"  />
-                )}
-              </div>
+              <div>{tlogo && <GatsbyImage image={tlogo} alt="Logo" />}</div>
             </div>
 
             <p className="text-[#4A4A4A] text-[15px] font-Outfit font-normal mb-4">
@@ -510,17 +506,16 @@ const smallstartup = () => {
             </p>
 
             <div className="flex flex-col md:flex-row justify-center items-center mb-4 space-y-4 md:space-y-0 md:space-x-4">
-             <div className="relative w-full md:w-[494px]">
-    <input
-      type="email"
-      placeholder="Subscribe to our newsletter"
-      className="p-4 pr-[120px] border rounded-lg w-full h-[60px] focus:outline-none focus:ring-2 focus:ring-purple-500"
-    />
-    <button
-      className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-[#821AEA] text-white px-4 py-2 rounded-lg h-[42px] hover:bg-purple-600 transition duration-300"
-    >
-      Subscribe
-    </button></div>
+              <div className="relative w-full md:w-[494px]">
+                <input
+                  type="email"
+                  placeholder="Subscribe to our newsletter"
+                  className="p-4 pr-[120px] border rounded-lg w-full h-[60px] focus:outline-none focus:ring-2 focus:ring-purple-500"
+                />
+                <button className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-[#821AEA] text-white px-4 py-2 rounded-lg h-[42px] hover:bg-purple-600 transition duration-300">
+                  Subscribe
+                </button>
+              </div>
             </div>
 
             <div className="flex justify-center space-x-4 mb-4">

@@ -1,4 +1,4 @@
-"use-client"
+"use-client";
 import React from "react";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { useStaticQuery, graphql } from "gatsby";
@@ -16,12 +16,12 @@ const TechStack = () => {
           gatsbyImageData(width: 80, placeholder: BLURRED)
         }
       }
-    react: file(relativePath: { eq: "react.png" }) {
+      react: file(relativePath: { eq: "react.png" }) {
         childImageSharp {
           gatsbyImageData(width: 80, placeholder: BLURRED)
         }
       }
-    firebase: file(relativePath: { eq: "firebase.png" }) {
+      firebase: file(relativePath: { eq: "firebase.png" }) {
         childImageSharp {
           gatsbyImageData(width: 80, placeholder: BLURRED)
         }
@@ -96,7 +96,6 @@ const TechStack = () => {
           gatsbyImageData(width: 80, placeholder: BLURRED)
         }
       }
-      
     }
   `);
 
@@ -115,16 +114,18 @@ const TechStack = () => {
     { name: "microsoft", image: getImage(data.microsoft) },
     { name: "c", image: getImage(data.c) },
     { name: "dotnet", image: getImage(data.dotnet) },
-     { name: "mongodb", image: getImage(data.mongodb) },
+    { name: "mongodb", image: getImage(data.mongodb) },
     { name: "microsoft2", image: getImage(data.microsoft2) },
-     
+
     { name: "gatsby", image: getImage(data.gatsby) },
     { name: "wordpress", image: getImage(data.wordpress) },
-  ].filter(tech => tech.image);
+  ].filter((tech) => tech.image);
 
   return (
     <div className=" mx-auto p-6 bg-gray-50">
-      <h2 className="text-[32px] sm:text-[28px] font-medium text-center font-Outfit text-[#000000] mb-8 ">Technologies that we use</h2>
+      <h2 className="text-[32px] sm:text-[28px] font-medium text-center font-Outfit text-[#000000] mb-8 ">
+        Technologies that we use
+      </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2 space-x-1 justify-items-center">
         {techLogos.map((tech, index) => (
           <div
@@ -132,18 +133,19 @@ const TechStack = () => {
             className="flex items-center justify-center p-4  transform transition duration-300 hover:scale-110 hover:shadow-lg animate-fadeIn"
             style={{ animationDelay: `${index * 0.1}s` }}
           >
-       {tech.image ? (
-              <GatsbyImage image={tech.image} alt={tech.name} className="h-17 w-17 object-contain" />
+            {tech.image ? (
+              <GatsbyImage
+                image={tech.image}
+                alt={tech.name}
+                className="h-17 w-17 object-contain"
+              />
             ) : (
               <span className="text-gray-400">Image not found</span>
             )}
-      </div>
+          </div>
         ))}
+      </div>
     </div>
-    
-    </div>
-
-    
   );
 };
 
