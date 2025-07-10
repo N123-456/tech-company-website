@@ -9,20 +9,8 @@ import Freequote from "./freequote";
 
 const IndexPage = () => {
   const quoteRef = useRef(null);
+  useScrollToQuote(quoteRef);
 
-  useEffect(() => {
-    if (typeof window !== "undefined" && window.location.hash === "#quote") {
-      const scrollToQuote = () => {
-        if (quoteRef.current) {
-          quoteRef.current.scrollIntoView({ behavior: "smooth" });
-        }
-      };
-
-      // Delay to ensure Freequote component is mounted
-      const timer = setTimeout(scrollToQuote, 500);
-      return () => clearTimeout(timer);
-    }
-  }, []);
 
   const data = useStaticQuery(graphql`
     query {
