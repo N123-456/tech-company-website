@@ -42,31 +42,39 @@ const Projects= () => {
     },
   ];
 
+  const Testimonials = [
+  {
+    id: "1",
+    name: "John Carter",
+    title: "Founder & CEO at Innovexa",
+    feedback:
+      "Working with this team was a game-changer for our business. They understood our vision and delivered a polished product that exceeded expectations. Their attention to detail and communication were top-notch.",
+    
+  },
+  {
+    id: "2",
+    name: "Mice Anders",
+    title: "Chief Technology Officer at NexaCore",
+    feedback:
+      "Their technical expertise is outstanding. From UI/UX to backend architecture, everything was executed flawlessly. Our project was delivered on time and with exceptional quality.",
+    
+  },
+  {
+    id: "3",
+    name: "Jennifer Lee",
+    title: "Product Manager at BrightApps",
+    feedback:
+      "Absolutely loved working with them! They transformed our ideas into a functional, beautiful application. Their team was flexible, skilled, and incredibly easy to collaborate with.",
+  
+  },
+];
+
+
   
  const [testimonials, setTestimonials] = useState<any[]>([]);
   const [selectedIndex, setSelectedIndex] = useState(0);
 
-    const loadTestimonials = () => {
-    const stored = JSON.parse(localStorage.getItem("testimonials") || "[]");
-    setTestimonials(stored);
-  };
-
-  useEffect(() => {
-    loadTestimonials();
-
-    // Listen to storage changes
-    const onStorageChange = () => {
-      loadTestimonials();
-    };
-
-    window.addEventListener("storage", onStorageChange);
-
-    // Cleanup
-    return () => {
-      window.removeEventListener("storage", onStorageChange);
-    };
-  }, []);
-
+  
     const handleDelete = (indexToDelete: number) => {
     const updated = testimonials.filter((_, i) => i !== indexToDelete);
     setTestimonials(updated);
@@ -154,10 +162,10 @@ const Projects= () => {
           <div className="flex flex-col lg:flex-row items-start gap-6">
             {/* Testimonial Cards */}
             <div className="flex flex-col gap-1">
-              {testimonials.map((t,index) => (
+              {Testimonials.map((t,index) => (
                 <div
                   key={t.id}
-                   onClick={() => setSelectedIndex(index)}
+                    onClick={() => setSelectedIndex(index)}
                   className={`cursor-pointer bg-white w-full md:w-[500px] rounded-lg shadow-md p-4 border-2 border-purple-300 transform hover:scale-105 transition duration-300 ease-in-out animate-fadeIn flex items-start ${
                 index === selectedIndex
                 ? "bg-purple-100 border-purple-400"
@@ -183,13 +191,13 @@ const Projects= () => {
                           {t.title}
                         </p>
                       </div>
-                       <button
+                       {/* <button
                 onClick={() => handleDelete(index)}
                 className="absolute top-2 right-2 text-purple-600 text-sm hover:text-red-700"
                 title="Delete testimonial"
               >
                 ❌
-              </button>
+              </button> */}
                     </div>
                   </div>
                 </div>
@@ -199,7 +207,7 @@ const Projects= () => {
             {/* Testimonial Paragraph */}
             <div className="w-full sm:w-[200px] lg:w-[680px]">
               <p className="font-Quicksand text-[#4A4A4A] text-[13px] font-medium border border-[#E5E5E5]">
-         {testimonials[selectedIndex]?.feedback}
+         {Testimonials[selectedIndex]?.feedback}
               </p>
             </div>
           </div>

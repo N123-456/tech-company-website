@@ -45,7 +45,7 @@ const Freequote = ({ quoteRef }) => {
   const whatsapp = getImage(data.whatsapp);
   const instagram = getImage(data.instagram);
   const facebook = getImage(data.facebook);
-  const form = useRef(null);
+  const form = useRef<HTMLFormElement>(null);
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -64,15 +64,8 @@ const Freequote = ({ quoteRef }) => {
         "BkqwK6VYhap8ZVCuT"
       )
       .then(() => {
-        alert("Message sent successfully!");
-        const existing = JSON.parse(
-          localStorage.getItem("testimonials") || "[]"
-        );
-        const newTestimonial = { name, title, feedback: message };
-        localStorage.setItem(
-          "testimonials",
-          JSON.stringify([...existing, newTestimonial])
-        );
+        alert("Thank You 😊");
+       form.current?.reset();
       })
       .catch(() => alert("Failed to send"));
   };
