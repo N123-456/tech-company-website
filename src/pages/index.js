@@ -4,7 +4,6 @@ import { AppLayout } from "../components/AppLayout/AppLayout";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { graphql, useStaticQuery } from "gatsby";
 import Services from "./services";
-import Projects from "./projects";
 import Freequote from "./freequote";
 import ClientOnly from "./ClientOnly";
 
@@ -111,8 +110,6 @@ const IndexPage = () => {
           </div>
         </div>
         <Services />
-
-        <Projects />
 
         <Freequote quoteRef={quoteRef} />
       </main>
