@@ -1,16 +1,16 @@
 import * as React from "react";
 import { useEffect, useRef, useMemo } from "react";
-import { AppLayout } from "../components/AppLayout/AppLayout";
+import { AppLayout } from "../components/AppLayout/AppLayout.tsx";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { graphql, useStaticQuery } from "gatsby";
-import Services from "./services";
-import Projects from "./projects";
-import Freequote from "./freequote";
+import Services from "./services.tsx";
+import Projects from "./projects.tsx";
+import Freequote from "./freequote.tsx";
+import useScrollToQuote from "./useScrollToQuote.ts";
 
 const IndexPage = () => {
   const quoteRef = useRef(null);
   useScrollToQuote(quoteRef);
-
 
   const data = useStaticQuery(graphql`
     query {

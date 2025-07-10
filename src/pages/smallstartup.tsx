@@ -196,7 +196,7 @@ const smallstartup = () => {
                     </div>
                   </div>
                   <h3 className="text-20 font-semibold font-Outfit text-[#000000] mb-2">
-                    Cloud Solutions & Infratstructure
+                    Cloud Solutions & Infrastructure
                   </h3>
                   <p className="text-[#4A4A4A] font-normal font-Quicksand text-[13px]">
                     Software development companies can assist startups in

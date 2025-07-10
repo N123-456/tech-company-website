@@ -1,9 +1,7 @@
 "use-client"
 import * as React from "react";
-import { AppLayout } from "../components/AppLayout/AppLayout";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { graphql, useStaticQuery } from "gatsby";
-import TechStack from "./technologies";
 import Heart from "../assets/HEART.svg";
 import School from "../assets/SCHOOL.svg";
 import Store from "../assets/STORE.svg";
