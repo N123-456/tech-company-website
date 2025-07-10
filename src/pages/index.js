@@ -1,5 +1,7 @@
+"use client"; // <-- Add this directive at the very top
+
 import * as React from "react";
-import { useEffect, useRef, useMemo } from "react";
+import { useEffect, useRef, useMemo, useState } from "react";
 import { AppLayout } from "../components/AppLayout/AppLayout";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { graphql, useStaticQuery } from "gatsby";
@@ -8,14 +10,13 @@ import Projects from "./projects";
 import Freequote from "./freequote";
 
 const IndexPage = () => {
+  const [isClient, setIsClient] = useState(false);
   const quoteRef = useRef(null);
 
   useEffect(() => {
-    if (
-      typeof window !== "undefined" &&
-      Array.isArray(window["dataLayer"]) &&
-      window?.location?.hash === "#quote"
-    ) {
+    setIsClient(true);
+    
+    if (isClient && window?.location?.hash === "#quote") {
       const scrollToQuote = () => {
         if (quoteRef.current) {
           quoteRef.current.scrollIntoView({ behavior: "smooth" });
@@ -26,7 +27,7 @@ const IndexPage = () => {
       const timer = setTimeout(scrollToQuote, 500);
       return () => clearTimeout(timer);
     }
-  }, []);
+  }, [isClient]);
 
   const data = useStaticQuery(graphql`
     query {
@@ -79,11 +80,16 @@ const IndexPage = () => {
     []
   );
 
+  // Only render on client to avoid hydration mismatches
+  if (!isClient) {
+    return null;
+  }
+
   return (
     <AppLayout>
       <main>
         <div className="pt-[80px] bg-white relative overflow-hidden">
-          {/* Background Blobs - Memoized components would be even better */}
+          {/* Background Blobs */}
           <>
             <div className="absolute top-[-40px] left-[-150px] w-[400px] z-0 opacity-70 animate-float">
               <BlobSVG gradientId="grad1" />
@@ -123,7 +129,7 @@ const IndexPage = () => {
   );
 };
 
-// Extracted components for better readability and performance
+// Extracted components remain the same
 const BlobSVG = ({ gradientId }) => (
   <svg
     viewBox="0 0 600 600"
