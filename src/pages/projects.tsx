@@ -1,3 +1,4 @@
+"use-client";
 import React, { useEffect, useState } from "react";
 import "../styles/global.css";
 import { graphql, useStaticQuery } from "gatsby";
@@ -5,17 +6,6 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { AppLayout } from "../components/AppLayout/AppLayout";
 import Project from "../assets/PROJECT.svg";
 import Project2 from "../assets/PROJECT2.svg";
-
-import { db } from "../firebase"; // 🔥 Firestore config
-import {
-  collection,
-  getDocs,
-  deleteDoc,
-  doc,
-  query,
-  orderBy,
-} from "firebase/firestore";
-
 const Projects = () => {
   const data = useStaticQuery(graphql`
     query {
@@ -24,7 +14,7 @@ const Projects = () => {
           gatsbyImageData(placeholder: BLURRED)
         }
       }
-      testmonal: file(relativePath: { eq: "testmonal.png" }) {
+      testimonal: file(relativePath: { eq: "testimonal.png" }) {
         childImageSharp {
           gatsbyImageData(placeholder: BLURRED)
         }
@@ -32,7 +22,7 @@ const Projects = () => {
     }
   `);
 
-  const testmonal = getImage(data.testmonal);
+  const testimonal = getImage(data.testimonal);
 
   const projects = [
     {
@@ -54,56 +44,37 @@ const Projects = () => {
   const [testimonials, setTestimonials] = useState<any[]>([]);
   const [selectedIndex, setSelectedIndex] = useState(0);
 
-  // Load testimonials from Firestore
+  const loadTestimonials = () => {
+    const stored = JSON.parse(localStorage.getItem("testimonials") || "[]");
+    setTestimonials(stored);
+  };
+
   useEffect(() => {
-    const fetchTestimonials = async () => {
-      try {
-        const q = query(
-          collection(db, "testimonials"),
-          orderBy("timestamp", "desc")
-        );
-        const snapshot = await getDocs(q);
-        const items = snapshot.docs.map((doc) => ({
-          id: doc.id,
-          ...doc.data(),
-        }));
-        setTestimonials(items);
-      } catch (error) {
-        console.error("Error fetching testimonials:", error);
-      }
+    loadTestimonials();
+
+    // Listen to storage changes
+    const onStorageChange = () => {
+      loadTestimonials();
     };
 
-    if (typeof window !== "undefined") {
-      fetchTestimonials();
+    window.addEventListener("storage", onStorageChange);
 
-      const savedIndex = localStorage.getItem("selectedTestimonial");
-      if (savedIndex) setSelectedIndex(Number(savedIndex));
-    }
+    // Cleanup
+    return () => {
+      window.removeEventListener("storage", onStorageChange);
+    };
   }, []);
 
-  // Save current selection
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      localStorage.setItem("selectedTestimonial", selectedIndex.toString());
-    }
-  }, [selectedIndex]);
+  const handleDelete = (indexToDelete: number) => {
+    const updated = testimonials.filter((_, i) => i !== indexToDelete);
+    setTestimonials(updated);
+    localStorage.setItem("testimonials", JSON.stringify(updated));
 
-  // Handle delete testimonial
-  const handleDelete = async (indexToDelete: number) => {
-    try {
-      const docId = testimonials[indexToDelete].id;
-      await deleteDoc(doc(db, "testimonials", docId));
-
-      const updated = testimonials.filter((_, i) => i !== indexToDelete);
-      setTestimonials(updated);
-
-      if (indexToDelete === selectedIndex) {
-        setSelectedIndex(0);
-      } else if (indexToDelete < selectedIndex) {
-        setSelectedIndex((prev) => Math.max(prev - 1, 0));
-      }
-    } catch (error) {
-      console.error("Failed to delete testimonial:", error);
+    // Reset selected index
+    if (indexToDelete === selectedIndex) {
+      setSelectedIndex(0);
+    } else if (indexToDelete < selectedIndex) {
+      setSelectedIndex((prev) => Math.max(prev - 1, 0));
     }
   };
 
@@ -141,7 +112,7 @@ const Projects = () => {
                 />
                 <img
                   src={Project2}
-                  alt="Project2"
+                  alt="Project"
                   className="absolute top-4 left-4 right-4 bottom-4 object-contain p-2"
                 />
               </div>
@@ -171,7 +142,7 @@ const Projects = () => {
           ))}
         </div>
 
-        {/* Testimonials */}
+        {/* Testimonials Section */}
         <div className="max-w-7xl mx-auto pt-10">
           <h1 className="text-[32px] font-medium font-Outfit text-[#000000] mb-8">
             Testimonials
@@ -183,18 +154,18 @@ const Projects = () => {
                 <div
                   key={t.id}
                   onClick={() => setSelectedIndex(index)}
-                  className={`relative cursor-pointer bg-white w-full md:w-[500px] rounded-lg shadow-md p-4 border-2 transform hover:scale-105 transition duration-300 ease-in-out animate-fadeIn flex items-start ${
+                  className={`cursor-pointer bg-white w-full md:w-[500px] rounded-lg shadow-md p-4 border-2 border-purple-300 transform hover:scale-105 transition duration-300 ease-in-out animate-fadeIn flex items-start ${
                     index === selectedIndex
                       ? "bg-purple-100 border-purple-400"
                       : "bg-white border-gray-300"
                   }`}
                 >
                   <div className="mr-4">
-                    {testmonal && (
+                    {testimonal && (
                       <GatsbyImage
-                        image={testmonal}
+                        image={testimonal}
                         alt="Testimonial"
-                        className="bg-white w-[40px] h-[40px]"
+                        className="bg-white"
                       />
                     )}
                   </div>
@@ -223,9 +194,8 @@ const Projects = () => {
 
             {/* Testimonial Paragraph */}
             <div className="w-full sm:w-[200px] lg:w-[680px]">
-              <p className="font-Quicksand text-[#4A4A4A] text-[13px] font-medium border border-[#E5E5E5] p-4 rounded-md min-h-[120px]">
-                {testimonials[selectedIndex]?.feedback ||
-                  "No feedback available."}
+              <p className="font-Quicksand text-[#4A4A4A] text-[13px] font-medium border border-[#E5E5E5]">
+                {testimonials[selectedIndex]?.feedback}
               </p>
             </div>
           </div>
