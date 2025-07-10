@@ -1,16 +1,32 @@
 import * as React from "react";
 import { useEffect, useRef, useMemo } from "react";
-import { AppLayout } from "../components/AppLayout/AppLayout.tsx";
+import { AppLayout } from "../components/AppLayout/AppLayout";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { graphql, useStaticQuery } from "gatsby";
-import Services from "./services.tsx";
-import Projects from "./projects.tsx";
-import Freequote from "./freequote.tsx";
-import useScrollToQuote from "./useScrollToQuote.ts";
+import Services from "./services";
+import Projects from "./projects";
+import Freequote from "./freequote";
 
 const IndexPage = () => {
   const quoteRef = useRef(null);
-  useScrollToQuote(quoteRef);
+
+  useEffect(() => {
+    if (
+      typeof window !== "undefined" &&
+      Array.isArray(window["dataLayer"]) &&
+      window?.location?.hash === "#quote"
+    ) {
+      const scrollToQuote = () => {
+        if (quoteRef.current) {
+          quoteRef.current.scrollIntoView({ behavior: "smooth" });
+        }
+      };
+
+      // Delay to ensure Freequote component is mounted
+      const timer = setTimeout(scrollToQuote, 500);
+      return () => clearTimeout(timer);
+    }
+  }, []);
 
   const data = useStaticQuery(graphql`
     query {
