@@ -1,4 +1,3 @@
-"use-client"
 import React, { useEffect, useState } from "react";
 import "../styles/global.css";
 import { graphql, useStaticQuery } from "gatsby";
@@ -8,8 +7,15 @@ import Project from "../assets/PROJECT.svg";
 import Project2 from "../assets/PROJECT2.svg";
 
 import { db } from "../firebase"; // 🔥 import Firestore
-import { collection, getDocs, deleteDoc, doc, query, orderBy } from "firebase/firestore";
-const Projects= () => {
+import {
+  collection,
+  getDocs,
+  deleteDoc,
+  doc,
+  query,
+  orderBy,
+} from "firebase/firestore";
+const Projects = () => {
   const data = useStaticQuery(graphql`
     query {
       projectpic: file(relativePath: { eq: "projectpic.png" }) {
@@ -25,7 +31,6 @@ const Projects= () => {
     }
   `);
 
- 
   const testmonal = getImage(data.testmonal);
 
   const projects = [
@@ -45,43 +50,47 @@ const Projects= () => {
     },
   ];
 
+  const [testimonials, setTestimonials] = useState<any[]>([]);
+  const [selectedIndex, setSelectedIndex] = useState(0);
 
-const [testimonials, setTestimonials] = useState<any[]>([]);
-const [selectedIndex, setSelectedIndex] = useState(0);
+  useEffect(() => {
+    const fetchTestimonials = async () => {
+      try {
+        const q = query(
+          collection(db, "testimonials"),
+          orderBy("timestamp", "desc")
+        );
+        const snapshot = await getDocs(q);
+        const items = snapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+        setTestimonials(items);
+      } catch (error) {
+        console.error("Error fetching testimonials:", error);
+      }
+    };
+    fetchTestimonials();
+  }, []);
 
-useEffect(() => {
-  const fetchTestimonials = async () => {
+  const handleDelete = async (indexToDelete: number) => {
     try {
-      const q = query(collection(db, "testimonials"), orderBy("timestamp", "desc"));
-      const snapshot = await getDocs(q);
-      const items = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
-      setTestimonials(items);
+      const docId = testimonials[indexToDelete].id;
+      await deleteDoc(doc(db, "testimonials", docId));
+
+      const updated = testimonials.filter((_, i) => i !== indexToDelete);
+      setTestimonials(updated);
+
+      if (indexToDelete === selectedIndex) {
+        setSelectedIndex(0);
+      } else if (indexToDelete < selectedIndex) {
+        setSelectedIndex((prev) => Math.max(prev - 1, 0));
+      }
     } catch (error) {
-      console.error("Error fetching testimonials:", error);
+      console.error("Failed to delete testimonial:", error);
     }
   };
-  fetchTestimonials();
-}, []);
 
-const handleDelete = async (indexToDelete: number) => {
-  try {
-    const docId = testimonials[indexToDelete].id;
-    await deleteDoc(doc(db, "testimonials", docId));
-
-    const updated = testimonials.filter((_, i) => i !== indexToDelete);
-    setTestimonials(updated);
-
-    if (indexToDelete === selectedIndex) {
-      setSelectedIndex(0);
-    } else if (indexToDelete < selectedIndex) {
-      setSelectedIndex((prev) => Math.max(prev - 1, 0));
-    }
-  } catch (error) {
-    console.error("Failed to delete testimonial:", error);
-  }
-};
-
-  
   return (
     <div className="min-h-screen bg-white py-10 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
@@ -109,18 +118,16 @@ const handleDelete = async (indexToDelete: number) => {
               className="flex flex-col md:flex-row bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-105 transition duration-300 ease-in-out animate-fadeIn"
             >
               <div className="relative flex-shrink-0">
-                 <img
-                        src={Project}
-                        alt="Project"
-                        className="hover:scale-110 transition-transform duration-300"
-                      />
-                       <img
-                        src={Project2}
-                        alt="Project"
-                        className="absolute top-4 left-4 right-4 bottom-4 object-contain p-2"
-                      />
-
-               
+                <img
+                  src={Project}
+                  alt="Project"
+                  className="hover:scale-110 transition-transform duration-300"
+                />
+                <img
+                  src={Project2}
+                  alt="Project"
+                  className="absolute top-4 left-4 right-4 bottom-4 object-contain p-2"
+                />
               </div>
               <div className="p-4">
                 <h2 className="text-[32px] font-normal font-Outfit mb-2 text-[#393939]">
@@ -156,15 +163,15 @@ const handleDelete = async (indexToDelete: number) => {
           <div className="flex flex-col lg:flex-row items-start gap-6">
             {/* Testimonial Cards */}
             <div className="flex flex-col gap-1">
-              {testimonials.map((t,index) => (
+              {testimonials.map((t, index) => (
                 <div
                   key={t.id}
-                   onClick={() => setSelectedIndex(index)}
+                  onClick={() => setSelectedIndex(index)}
                   className={`cursor-pointer bg-white w-full md:w-[500px] rounded-lg shadow-md p-4 border-2 border-purple-300 transform hover:scale-105 transition duration-300 ease-in-out animate-fadeIn flex items-start ${
-                index === selectedIndex
-                ? "bg-purple-100 border-purple-400"
-                : "bg-white border-gray-300"
-            }`}
+                    index === selectedIndex
+                      ? "bg-purple-100 border-purple-400"
+                      : "bg-white border-gray-300"
+                  }`}
                 >
                   <div className="mr-4">
                     {testmonal && (
@@ -185,13 +192,13 @@ const handleDelete = async (indexToDelete: number) => {
                           {t.title}
                         </p>
                       </div>
-                       <button
-                onClick={() => handleDelete(index)}
-                className="absolute top-2 right-2 text-purple-600 text-sm hover:text-red-700"
-                title="Delete testimonial"
-              >
-                ❌
-              </button>
+                      <button
+                        onClick={() => handleDelete(index)}
+                        className="absolute top-2 right-2 text-purple-600 text-sm hover:text-red-700"
+                        title="Delete testimonial"
+                      >
+                        ❌
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -201,7 +208,7 @@ const handleDelete = async (indexToDelete: number) => {
             {/* Testimonial Paragraph */}
             <div className="w-full sm:w-[200px] lg:w-[680px]">
               <p className="font-Quicksand text-[#4A4A4A] text-[13px] font-medium border border-[#E5E5E5]">
-         {testimonials[selectedIndex]?.feedback}
+                {testimonials[selectedIndex]?.feedback}
               </p>
             </div>
           </div>

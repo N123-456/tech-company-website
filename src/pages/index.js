@@ -6,12 +6,23 @@ import { graphql, useStaticQuery } from "gatsby";
 import Services from "./services";
 import Projects from "./projects";
 import Freequote from "./freequote";
+import ClientOnly from "./ClientOnly";
 
 const IndexPage = () => {
   const quoteRef = useRef(null);
 
   // Scroll to #quote only on client
- 
+  useEffect(() => {
+    if (typeof window !== "undefined" && window.location.hash === "#quote") {
+      const scrollToQuote = () => {
+        if (quoteRef.current) {
+          quoteRef.current.scrollIntoView({ behavior: "smooth" });
+        }
+      };
+      const timer = setTimeout(scrollToQuote, 500);
+      return () => clearTimeout(timer);
+    }
+  }, []);
 
   const data = useStaticQuery(graphql`
     query {
@@ -100,7 +111,9 @@ const IndexPage = () => {
           </div>
         </div>
         <Services />
-        <Projects />
+        <ClientOnly>
+          <Projects />
+        </ClientOnly>
         <Freequote quoteRef={quoteRef} />
       </main>
     </AppLayout>
