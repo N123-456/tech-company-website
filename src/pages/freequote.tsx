@@ -97,38 +97,58 @@ const Freequote = ({ quoteRef }) => {
 
         <div id="quote" ref={quoteRef} className="w-full h-auto md:h-[400px]  md:w-1/2 p-6 bg-white transform transition duration-300">
           <form ref={form} onSubmit={sendEmail} className="space-y-4">
-            <input
-              type="text"
-              name="name"
-              placeholder="Name"
-              className="w-full p-2 border rounded"
-              required
-            />
-            <input
-              type="email"
-              name="email"
-              placeholder="Email"
-              className="w-full p-2 border rounded"
-              required
-            />
-            <input
-              type="text"
-              name="title"
-              placeholder="Subject"
-              className="w-full p-2 border rounded"
-              required
-            />
-            <textarea
-              name="message"
-              placeholder="Your message"
-              className="w-full p-2 border rounded h-24"
-              required
-            />
-            <div className="flex md:pl-[240px] justify-end">
-              <button
-                type="submit"
-                className="w-[153px] h-[42px] lg:text-[15px] md:text-[10px] bg-[#821AEA] text-white font-Outfit font-normal p-2 rounded-xl hover:bg-purple-700 transition duration-300"
-              >
+            <div className="relative">
+      <input
+        type="text"
+        name="name"
+        placeholder="Name"
+        className="w-full p-2 border rounded pr-10 sm:pr-12"
+        required
+      />
+      <span className="absolute right-2 sm:right-3 top-1/2 -translate-y-1/2 text-red-500 text-sm sm:text-base font-bold z-20">
+        *
+      </span>
+    </div>
+    <div className="relative">
+      <input
+        type="email"
+        name="email"
+        placeholder="Email"
+        className="w-full p-2 border rounded pr-10 sm:pr-12"
+        required
+      />
+      <span className="absolute right-2 sm:right-3 top-1/2 -translate-y-1/2 text-red-500 text-sm sm:text-base font-bold z-20">
+        *
+      </span>
+    </div>
+    <div className="relative">
+      <input
+        type="text"
+        name="title"
+        placeholder="Subject"
+        className="w-full p-2 border rounded pr-10 sm:pr-12"
+        required
+      />
+      <span className="absolute right-2 sm:right-3 top-1/2 -translate-y-1/2 text-red-500 text-sm sm:text-base font-bold z-20">
+        *
+      </span>
+    </div>
+    <div className="relative">
+      <textarea
+        name="message"
+        placeholder="Your message"
+        className="w-full p-2 border rounded h-24 pr-10 sm:pr-12"
+        required
+      />
+      <span className="absolute right-2 sm:right-3 top-3 text-red-500 text-sm sm:text-base font-bold z-20">
+        *
+      </span>
+    </div>
+    <div className="flex justify-end md:pl-[240px]">
+      <button
+        type="submit"
+        className="w-[153px] h-[42px] text-[14px] sm:text-[15px] bg-[#821AEA] text-white font-Outfit font-normal p-2 rounded-xl hover:bg-purple-700 transition duration-300"
+      >
                 Get a free quote
               </button>
             </div>

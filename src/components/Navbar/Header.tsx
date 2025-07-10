@@ -1,7 +1,7 @@
 import { graphql, Link, navigate, useStaticQuery } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import React from "react";
-import frame from "../assets/Frame.svg";
+
 const Header = () => {
   const data = useStaticQuery(graphql`
     query {
