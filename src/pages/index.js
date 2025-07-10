@@ -11,34 +11,7 @@ const IndexPage = () => {
   const quoteRef = useRef(null);
 
   // Scroll to #quote only on client
-  useEffect(() => {
-    if (typeof window !== "undefined" && window.location.hash === "#quote") {
-      const scrollToQuote = () => {
-        if (quoteRef.current) {
-          quoteRef.current.scrollIntoView({ behavior: "smooth" });
-        }
-      };
-      const timer = setTimeout(scrollToQuote, 500);
-      return () => clearTimeout(timer);
-    }
-  }, []);
-
-  // Handle dataLayer safely (if you're using analytics or GTM)
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const dataLayerName = "dataLayer";
-      let dataLayer = [];
-
-      if (Array.isArray(window[dataLayerName])) {
-        dataLayer = window[dataLayerName];
-      } else {
-        window[dataLayerName] = [];
-      }
-
-      // Example: Push a page view
-      dataLayer.push({ event: "pageview", page: window.location.pathname });
-    }
-  }, []);
+ 
 
   const data = useStaticQuery(graphql`
     query {
