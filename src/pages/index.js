@@ -1,7 +1,5 @@
-"use client"; // <-- Add this directive at the very top
-
 import * as React from "react";
-import { useEffect, useRef, useMemo, useState } from "react";
+import { useEffect, useRef, useMemo } from "react";
 import { AppLayout } from "../components/AppLayout/AppLayout";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { graphql, useStaticQuery } from "gatsby";
@@ -10,24 +8,37 @@ import Projects from "./projects";
 import Freequote from "./freequote";
 
 const IndexPage = () => {
-  const [isClient, setIsClient] = useState(false);
   const quoteRef = useRef(null);
 
+  // Scroll to #quote only on client
   useEffect(() => {
-    setIsClient(true);
-    
-    if (isClient && window?.location?.hash === "#quote") {
+    if (typeof window !== "undefined" && window.location.hash === "#quote") {
       const scrollToQuote = () => {
         if (quoteRef.current) {
           quoteRef.current.scrollIntoView({ behavior: "smooth" });
         }
       };
-
-      // Delay to ensure Freequote component is mounted
       const timer = setTimeout(scrollToQuote, 500);
       return () => clearTimeout(timer);
     }
-  }, [isClient]);
+  }, []);
+
+  // Handle dataLayer safely (if you're using analytics or GTM)
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const dataLayerName = "dataLayer";
+      let dataLayer = [];
+
+      if (Array.isArray(window[dataLayerName])) {
+        dataLayer = window[dataLayerName];
+      } else {
+        window[dataLayerName] = [];
+      }
+
+      // Example: Push a page view
+      dataLayer.push({ event: "pageview", page: window.location.pathname });
+    }
+  }, []);
 
   const data = useStaticQuery(graphql`
     query {
@@ -49,7 +60,6 @@ const IndexPage = () => {
     }
   `);
 
-  // Memoize images to prevent unnecessary recalculations
   const [sideImage, Rectangle5, Rectangle6] = useMemo(
     () => [
       getImage(data.sideimage),
@@ -79,11 +89,6 @@ const IndexPage = () => {
     ],
     []
   );
-
-  // Only render on client to avoid hydration mismatches
-  if (!isClient) {
-    return null;
-  }
 
   return (
     <AppLayout>
@@ -129,7 +134,6 @@ const IndexPage = () => {
   );
 };
 
-// Extracted components remain the same
 const BlobSVG = ({ gradientId }) => (
   <svg
     viewBox="0 0 600 600"
