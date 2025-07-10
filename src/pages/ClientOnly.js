@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const ClientOnly = ({ children }) => {
-  if (typeof window === "undefined") {
-    return null; // Don't render anything during SSR
-  }
+  const [hasMounted, setHasMounted] = useState(false);
+
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
+
+  if (!hasMounted) return null;
 
   return <>{children}</>;
 };

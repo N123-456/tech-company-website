@@ -6,7 +6,7 @@ import { AppLayout } from "../components/AppLayout/AppLayout";
 import Project from "../assets/PROJECT.svg";
 import Project2 from "../assets/PROJECT2.svg";
 
-import { db } from "../firebase"; // 🔥 import Firestore
+import { db } from "../firebase"; // 🔥 Firestore config
 import {
   collection,
   getDocs,
@@ -15,6 +15,7 @@ import {
   query,
   orderBy,
 } from "firebase/firestore";
+
 const Projects = () => {
   const data = useStaticQuery(graphql`
     query {
@@ -53,6 +54,7 @@ const Projects = () => {
   const [testimonials, setTestimonials] = useState<any[]>([]);
   const [selectedIndex, setSelectedIndex] = useState(0);
 
+  // Load testimonials from Firestore
   useEffect(() => {
     const fetchTestimonials = async () => {
       try {
@@ -70,9 +72,23 @@ const Projects = () => {
         console.error("Error fetching testimonials:", error);
       }
     };
-    fetchTestimonials();
+
+    if (typeof window !== "undefined") {
+      fetchTestimonials();
+
+      const savedIndex = localStorage.getItem("selectedTestimonial");
+      if (savedIndex) setSelectedIndex(Number(savedIndex));
+    }
   }, []);
 
+  // Save current selection
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      localStorage.setItem("selectedTestimonial", selectedIndex.toString());
+    }
+  }, [selectedIndex]);
+
+  // Handle delete testimonial
   const handleDelete = async (indexToDelete: number) => {
     try {
       const docId = testimonials[indexToDelete].id;
@@ -125,7 +141,7 @@ const Projects = () => {
                 />
                 <img
                   src={Project2}
-                  alt="Project"
+                  alt="Project2"
                   className="absolute top-4 left-4 right-4 bottom-4 object-contain p-2"
                 />
               </div>
@@ -155,7 +171,7 @@ const Projects = () => {
           ))}
         </div>
 
-        {/* Testimonials Section */}
+        {/* Testimonials */}
         <div className="max-w-7xl mx-auto pt-10">
           <h1 className="text-[32px] font-medium font-Outfit text-[#000000] mb-8">
             Testimonials
@@ -167,7 +183,7 @@ const Projects = () => {
                 <div
                   key={t.id}
                   onClick={() => setSelectedIndex(index)}
-                  className={`cursor-pointer bg-white w-full md:w-[500px] rounded-lg shadow-md p-4 border-2 border-purple-300 transform hover:scale-105 transition duration-300 ease-in-out animate-fadeIn flex items-start ${
+                  className={`relative cursor-pointer bg-white w-full md:w-[500px] rounded-lg shadow-md p-4 border-2 transform hover:scale-105 transition duration-300 ease-in-out animate-fadeIn flex items-start ${
                     index === selectedIndex
                       ? "bg-purple-100 border-purple-400"
                       : "bg-white border-gray-300"
@@ -207,8 +223,9 @@ const Projects = () => {
 
             {/* Testimonial Paragraph */}
             <div className="w-full sm:w-[200px] lg:w-[680px]">
-              <p className="font-Quicksand text-[#4A4A4A] text-[13px] font-medium border border-[#E5E5E5]">
-                {testimonials[selectedIndex]?.feedback}
+              <p className="font-Quicksand text-[#4A4A4A] text-[13px] font-medium border border-[#E5E5E5] p-4 rounded-md min-h-[120px]">
+                {testimonials[selectedIndex]?.feedback ||
+                  "No feedback available."}
               </p>
             </div>
           </div>

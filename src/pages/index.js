@@ -111,9 +111,9 @@ const IndexPage = () => {
           </div>
         </div>
         <Services />
-        <ClientOnly>
-          <Projects />
-        </ClientOnly>
+
+        <Projects />
+
         <Freequote quoteRef={quoteRef} />
       </main>
     </AppLayout>
