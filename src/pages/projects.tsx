@@ -196,8 +196,8 @@ const Projects = () => {
             </div>
 
             {/* Testimonial Paragraph */}
-            <div className="sm:w-[200px] lg:w-[680px] lg:min-h-[370px] sm:min-h-[200px] md:min-h-[200px] flex">
-              <p className="font-Quicksand text-[#4A4A4A] lg:text-[18px] sm:text-[13px] md:text-[13px] font-medium border border-[#E5E5E5] w-full">
+            <div className=" lg:min-h-[370px] sm:min-h-[200px] md:min-h-[200px] relative pl-[100px] pt-[84px] p-5 rounded-[10px] bg-[#f7efff]">
+              <p className="relative before:content-['“'] before:absolute before:left-0 before:top-0 before:translate-x-[-90px]  before:translate-y-[-140px] before:text-[15rem] before:font-serif before:text-[#9550ff] w-full">
                 {Testimonials[selectedIndex]?.feedback}
               </p>
             </div>
