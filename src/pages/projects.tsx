@@ -166,9 +166,9 @@ const Projects= () => {
                 <div
                   key={t.id}
                     onClick={() => setSelectedIndex(index)}
-                  className={`cursor-pointer bg-white w-full md:w-[500px] rounded-lg shadow-md p-4 border-2 border-purple-300 transform hover:scale-105 transition duration-300 ease-in-out animate-fadeIn flex items-start ${
+                  className={`cursor-pointer bg-white w-full md:w-[500px] rounded-lg shadow-md p-4 border-l-2 border-purple-500 transform hover:scale-105 transition duration-300 ease-in-out animate-fadeIn flex items-start ${
                 index === selectedIndex
-                ? "bg-purple-100 border-purple-400"
+                ? "bg-purple-300 border-purple-500"
                 : "bg-white border-gray-300"
             }`}
                 >
@@ -206,7 +206,7 @@ const Projects= () => {
 
             {/* Testimonial Paragraph */}
             <div className="w-full sm:w-[200px] lg:w-[680px]">
-              <p className="font-Quicksand text-[#4A4A4A] text-[13px] font-medium border border-[#E5E5E5]">
+              <p className="font-Quicksand text-[#4A4A4A] lg:text-[18px] sm:text[13px] md:[13px] font-medium border border-[#E5E5E5]">
          {Testimonials[selectedIndex]?.feedback}
               </p>
             </div>
