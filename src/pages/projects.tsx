@@ -168,7 +168,7 @@ const Projects= () => {
                     onClick={() => setSelectedIndex(index)}
                   className={`cursor-pointer bg-white w-full md:w-[500px] rounded-lg shadow-md p-4 border-l-2  transform hover:scale-105 transition duration-300 ease-in-out animate-fadeIn flex items-start ${
                 index === selectedIndex
-                ? "bg-purple-300 border-purple-500"
+                ? "bg-purple-200 border-purple-500"
                 : "bg-white border-gray-300"
             }`}
                 >
