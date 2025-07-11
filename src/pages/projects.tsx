@@ -152,7 +152,7 @@ const Projects = () => {
           </h1>
           <div className="flex flex-col lg:flex-row items-start gap-6">
             {/* Testimonial Cards */}
-            <div className="flex flex-col gap-1">
+            <div className="flex flex-col gap-4">
               {Testimonials.map((t, index) => (
                 <div
                   key={t.id}
@@ -196,8 +196,8 @@ const Projects = () => {
             </div>
 
             {/* Testimonial Paragraph */}
-            <div className="w-full sm:w-[200px] lg:w-[680px]">
-              <p className="font-Quicksand text-[#4A4A4A] lg:text-[18px] sm:text[13px] md:[13px] font-medium border border-[#E5E5E5]">
+            <div className="sm:w-[200px] lg:w-[680px] lg:min-h-[370px] sm:min-h-[200px] md:min-h-[200px] flex">
+              <p className="font-Quicksand text-[#4A4A4A] lg:text-[18px] sm:text-[13px] md:text-[13px] font-medium border border-[#E5E5E5] w-full">
                 {Testimonials[selectedIndex]?.feedback}
               </p>
             </div>
